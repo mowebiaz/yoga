@@ -6,7 +6,7 @@ import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
 import { fr } from '@payloadcms/translations/languages/fr'
-import { buildConfig, PayloadRequest } from 'payload'
+import { buildConfig } from 'payload'
 import sharp from 'sharp'
 //import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
@@ -14,6 +14,7 @@ import { Users } from './collections/Users/config'
 import { defaultLexical } from './components/RichText/defaultLexical'
 //import { Logos } from './globals/Logos'
 import { getServerSideURL } from './utilities/getURL'
+import { Pages } from './collections/Pages/Pages'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -120,7 +121,7 @@ Logo: {
   editor: defaultLexical,
 
   // Define and configure your collections in this array
-  collections: [Media, Users],
+  collections: [Media, Users, Pages],
   //globals: [Logos],
 
   // Your Payload secret - should be a complex and secure string, unguessable
