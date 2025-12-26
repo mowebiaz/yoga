@@ -2,6 +2,8 @@
   "name": "site-yoga",
   "version": "0.1.0",
   "private": true,
+    "type": "module",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,17 +11,28 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.4.8"
+    "@payloadcms/admin-bar": "^3.68.5",
+    "@payloadcms/db-vercel-postgres": "^3.68.1",
+    "@payloadcms/live-preview-react": "^3.68.5",
+    "@payloadcms/next": "^3.68.1",
+    "@payloadcms/richtext-lexical": "^3.68.1",
+    "@payloadcms/storage-vercel-blob": "^3.68.5",
+    "date-fns": "^4.1.0",
+    "graphql": "^16.12.0",
+    "next": "^15.4.8",
+    "payload": "^3.68.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.8",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
