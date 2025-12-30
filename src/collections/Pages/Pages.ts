@@ -31,6 +31,7 @@ export const Pages: CollectionConfig = {
         collection: 'pages',
         req,
       }),
+
   },
   fields: [
     {
@@ -50,7 +51,16 @@ export const Pages: CollectionConfig = {
       name: 'layout',
       type: 'blocks',
       label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
       blocks: [InfoMessage, Workshop],
+      admin: {
+        description:
+          'Construisez la mise en page de cette page en ajoutant des blocs de contenu.',
+
+      },
     },
   ],
   versions: {

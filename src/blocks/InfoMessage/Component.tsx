@@ -1,6 +1,8 @@
 import React from 'react'
 import { RichText } from '@/components/RichText/RichText'
 import type { InfoMessageBlock as InfoMessageBlockProps } from '@/payload-types'
+import './InfoMessage.scss'
+
 
 type Props = {
   className?: string

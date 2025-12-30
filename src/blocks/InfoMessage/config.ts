@@ -1,8 +1,15 @@
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import {
+  FixedToolbarFeature,
+  lexicalEditor,
+} from '@payloadcms/richtext-lexical'
 import type { Block } from 'payload'
 
 export const InfoMessage: Block = {
   slug: 'infoMessage',
+  //The image container uses a 3:2 aspect ratio (e.g., 480x320 pixels)
+  /*   imageURL:
+    'https://cdn.pixabay.com/photo/2021/02/27/06/08/lines-6053765_1280.png',
+  imageAltText: 'bloc avec une image et du texte', */
   fields: [
     {
       name: 'style',
@@ -25,11 +32,12 @@ export const InfoMessage: Block = {
         admin: {
           placeholder: 'Écrivez votre message ici...',
         },
-/*         features: ({rootFeatures}) => [
+        features: ({ rootFeatures }) => [
           ...rootFeatures,
-        ] */
-      })
-    }
+          FixedToolbarFeature(),
+        ],
+      }),
+    },
   ],
   interfaceName: 'InfoMessageBlock',
 }
