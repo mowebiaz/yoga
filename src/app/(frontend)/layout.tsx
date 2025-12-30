@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { Footer } from '@/components/Footer/Footer'
 import { fraunces, inter } from '@/styles/fonts'
 import '@/styles/scss/globals.scss'
+import { Header } from '@/components/Navigation/Header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${fraunces.variable} ${inter.variable}`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

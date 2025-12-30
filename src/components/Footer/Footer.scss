@@ -1,0 +1,10 @@
+@use '@/styles/scss/variables' as *;
+
+footer {
+  height: 100px;
+  background-color: oklch(24.834% 0.05985 324.415);
+  color: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
