@@ -1,0 +1,44 @@
+@use '@/styles/scss/mixins' as *;
+
+/* #about .container {
+  img {
+    float: left;
+    border-radius: 50%;
+    shape-outside: margin-box;
+    margin: 20px;
+  }
+} */
+
+#about {
+    .container {
+         display: flex;
+        flex-direction: column;
+
+        .image-container {
+          align-self: center;
+            position: relative;
+            //width: 80vw;
+            height: 50vh;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0.5rem 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+    @include lg {
+        .container {
+            display: block;
+
+            .image-container {
+                float: left;
+                border-radius: 50%;
+                shape-outside: margin-box;
+                margin: 20px 20px 20px 0;
+            }
+        }
+    }
+}
