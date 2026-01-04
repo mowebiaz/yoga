@@ -259,7 +259,7 @@ export interface Page {
   title: string;
   slug: string;
   /**
-   * Construisez la mise en page de cette page en ajoutant des blocs de contenu.
+   * Ajotez des blocs de contenu.
    */
   layout?: (InfoMessageBlock | WorkshopBlock)[] | null;
   updatedAt: string;

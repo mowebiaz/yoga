@@ -31,7 +31,6 @@ export const Pages: CollectionConfig = {
         collection: 'pages',
         req,
       }),
-
   },
   fields: [
     {
@@ -57,9 +56,7 @@ export const Pages: CollectionConfig = {
       },
       blocks: [InfoMessage, Workshop],
       admin: {
-        description:
-          'Construisez la mise en page de cette page en ajoutant des blocs de contenu.',
-
+        description: 'Ajoutez des blocs de contenu.',
       },
     },
   ],
@@ -74,5 +71,5 @@ export const Pages: CollectionConfig = {
   hooks: {
     afterChange: [revalidatePage],
     afterDelete: [revalidatePageDelete],
-  }
+  },
 }
