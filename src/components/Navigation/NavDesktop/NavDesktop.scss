@@ -1,32 +1,37 @@
 @use '@/styles/scss/variables' as *;
+@use '@/styles/scss/mixins' as *;
 
-.nav-desktop {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    gap: clamp(1rem, 6.3vw - 2rem, 2rem);
+nav.nav-desktop {
+    display: none;
 
-    li {
-        background-color: $accent;
-        border-radius: 7px;
+    @include md {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+
+    @include lg {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 200ms ease-in-out;
-
-        a {
-            padding-inline: clamp(0.5rem, 3.1vw - 1rem, 1rem);;
-            padding-block: 0.2rem;
-            text-transform: uppercase;
-            color: $text;
-        }
-
-        &:hover {
-            background-color: $secondary;
-        }
     }
 
-    .active {
-        background-color: $secondary;
+    ul {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        list-style-type: none;
+        gap: clamp(1rem, 6.3vw - 2rem, 2rem);
     }
 }

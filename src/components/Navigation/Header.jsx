@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, useMotionValueEvent, useScroll } from 'motion/react'
+import { useMotionValueEvent, useScroll } from 'motion/react'
 import { NavDesktop } from './NavDesktop/NavDesktop'
+import { NavMobile } from './NavMobile/NavMobile'
 import './Header.scss'
 
 export const Header = () => {
@@ -15,10 +16,8 @@ export const Header = () => {
 
   return (
     <header className={isScrolled ? 'scrolled' : ''}>
-      <nav>
-        <p className="logo-container">Logo</p>
-        <NavDesktop />
-      </nav>
+      <NavDesktop />
+      <NavMobile />
     </header>
   )
 }

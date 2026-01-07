@@ -1,4 +1,5 @@
 @use '@/styles/scss/variables' as *;
+
 header {
     position: fixed;
     top: 0;
@@ -7,26 +8,38 @@ header {
     height: 60px;
     z-index: 100;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
     background-color: $text;
     color: $background;
 
-    nav {
-        .logo-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    &.scrolled {
+        background-color: rgba(62, 29, 64, 0.85);
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid rgba(249, 240, 233, 0.18);
+    }
+
+    nav li {
+        background-color: $accent;
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 200ms ease-in-out;
+
+        a {
+            padding-inline: clamp(0.5rem, 3.1vw - 1rem, 1rem);
+            padding-block: 0.2rem;
+            text-transform: uppercase;
+            color: $text;
+        }
+
+        &:hover {
+            background-color: $secondary;
         }
     }
-}
 
-header.scrolled {
-    background-color: rgba(62, 29, 64, 0.85);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(249, 240, 233, 0.18);
+    .active {
+        background-color: $secondary;
+    }
 }
