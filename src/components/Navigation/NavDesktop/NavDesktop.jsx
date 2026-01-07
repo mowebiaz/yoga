@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { navLinks } from '../navLinks'
@@ -10,7 +11,21 @@ export const NavDesktop = () => {
 
   return (
     <nav className="nav-desktop">
-      <p className="logo-container">Logo</p>
+      <div className="logo-container">
+        <Link
+          href="/"
+          aria-label="Accueil"
+        >
+          <Image
+            src="/icons/favicon-dark.svg"
+            alt=""
+            width={50}
+            height={50}
+            priority
+            aria-hidden="true"
+          />
+        </Link>
+      </div>
 
       <ul>
         {navLinks.map((link) => (

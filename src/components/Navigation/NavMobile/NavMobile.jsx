@@ -7,6 +7,7 @@ import { Divide as Hamburger } from 'hamburger-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { navLinks } from '../navLinks'
 import './NavMobile.scss'
+import Image from 'next/image'
 
 export const NavMobile = () => {
   const pathname = usePathname()
@@ -35,7 +36,21 @@ export const NavMobile = () => {
 
   return (
     <nav className="nav-mobile">
-      <p className="logo-container">Logo</p>
+            <div className="logo-container">
+        <Link
+          href="/"
+          aria-label="Accueil"
+        >
+          <Image
+            src="/icons/favicon-dark.svg"
+            alt=""
+            width={50}
+            height={50}
+            priority
+            aria-hidden="true"
+          />
+        </Link>
+      </div>
       <Hamburger
         color="#f9f0e9"
         toggle={setIsOpen}
