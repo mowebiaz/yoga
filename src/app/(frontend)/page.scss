@@ -1,0 +1,31 @@
+@use '@/styles/scss/mixins' as *;
+
+#home {
+    .content-with-image {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        .image-container {
+            position: relative;
+            min-height: clamp(13.75rem, 12.727rem + 2.841vw, 15rem);
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            img {
+                object-fit: cover;
+                object-position: bottom center;
+            }
+        }
+    }
+    @include md {
+      
+        .content-with-image.right {
+            grid-template-columns: 1fr 2fr;
+        }
+        .content-with-image.left {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+}

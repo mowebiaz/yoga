@@ -1,0 +1,35 @@
+@use './variables' as *;
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background-color: $primary;
+    color: rgb(249, 246, 241);
+    padding: 0.5rem 1rem;
+    transition: all ease 0.2s;
+
+    &:hover {
+        transform: translate(0, -3px);
+        background-color: oklch(30% 0.094 325.7);
+        box-shadow: 0 20px 80px -10px $primary;
+    }
+}
+
+.btn--secondary {
+    background-color: $secondary;
+    color: $text;
+    padding: 0.5rem 1rem;
+    transition: all ease 0.2s;
+
+    &:hover {
+        transform: translate(0, -3px);
+        background-color: oklch(77.6% 0.12 40.48);
+        box-shadow: 0 20px 80px -10px $secondary;
+    }
+}
