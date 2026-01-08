@@ -8,8 +8,16 @@ const blockComponents = {
   workshop: WorkshopBlock,
 }
 
+type PageLayout =
+  | Page['layoutHome']
+  | Page['layoutCoursAdulte']
+  | Page['layoutCoursEnfant']
+  | Page['layoutWorkshops']
+  | Page['layoutAbout']
+  | Page['layoutContact']
+
 export const RenderBlocks: React.FC<{
-  blocks?: Page['layout'] | null
+  blocks?: PageLayout | null
 }> = (props) => {
   const { blocks } = props
 
@@ -28,12 +36,10 @@ export const RenderBlocks: React.FC<{
               return (
                 <div
                   //className="my-16"
-                  key={index}
+                  key={'id' in block && block.id ? block.id : index}
                 >
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
-                  <Block
-                    {...block}
-                  />
+                  <Block {...block} />
                 </div>
               )
             }

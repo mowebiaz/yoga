@@ -47,7 +47,49 @@ export const Pages: CollectionConfig = {
       required: true,
     },
     {
-      name: 'layout',
+      name: 'layoutHome',
+      type: 'blocks',
+      label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
+      blocks: [InfoMessage],
+      admin: {
+        description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'accueil',
+      },
+    },
+    {
+      name: 'layoutCoursAdulte',
+      type: 'blocks',
+      label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
+      blocks: [Workshop],
+      admin: {
+        description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'cours',
+      },
+    },
+    {
+      name: 'layoutCoursEnfant',
+      type: 'blocks',
+      label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
+      blocks: [Workshop],
+      admin: {
+        description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'cours',
+      },
+    },
+    {
+      name: 'layoutWorkshops',
       type: 'blocks',
       label: 'Blocs de contenu',
       labels: {
@@ -57,6 +99,35 @@ export const Pages: CollectionConfig = {
       blocks: [InfoMessage, Workshop],
       admin: {
         description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'actu-ateliers',
+      },
+    },
+    {
+      name: 'layoutAbout',
+      type: 'blocks',
+      label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
+      blocks: [InfoMessage],
+      admin: {
+        description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'a-propos',
+      },
+    },
+    {
+      name: 'layoutContact',
+      type: 'blocks',
+      label: 'Blocs de contenu',
+      labels: {
+        singular: 'un Bloc',
+        plural: ' des Blocs',
+      },
+      blocks: [InfoMessage],
+      admin: {
+        description: 'Ajoutez des blocs de contenu.',
+        condition: (data) => data?.slug === 'contact',
       },
     },
   ],

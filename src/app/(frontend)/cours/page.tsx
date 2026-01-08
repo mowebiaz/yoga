@@ -3,18 +3,18 @@ import Link from 'next/link'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { LivePreviewListener } from '@/components/LivePreviewListener/LivePreviewListener'
 import { getPage } from '@/utilities/getPage'
+import './Cours.scss'
 
 export default async function Cours() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('cours')
-  const { layout } = page || {}
+  const { layoutCoursAdulte, layoutCoursEnfant } = page || {}
 
   return (
-    <main>
+    <main id="cours">
       {draft && <LivePreviewListener />}
       <h1>Mes cours réguliers</h1>
       <div className="container">
-        <RenderBlocks blocks={layout} />
         <p>
           Que vous veniez pour bouger, souffler, vous assouplir ou simplement
           prendre un temps pour vous, vous êtes au bon endroit. Mes cours sont
@@ -38,8 +38,8 @@ export default async function Cours() {
         <p>
           <span className="text-accent">Période:</span> les cours réguliers ont
           lieu sur l’année scolaire (septembre → juin). Pas de cours pendant les
-          vacances scolaires (sauf ateliers ponctuels indiqués dans la page
-          <Link href="/actu-ateliers">Actu &Ateliers</Link>.
+          vacances scolaires (sauf ateliers ponctuels indiqués dans la page{' '}
+          <Link href="/actu-ateliers">Actu &Ateliers</Link>).
         </p>
         <p>
           <span className="text-accent">Matériel:</span> venez avec une tenue
@@ -59,7 +59,7 @@ export default async function Cours() {
           sont plus toniques, d’autres plus doux. Vous pouvez choisir selon vos
           besoins.
         </p>
-        {/* TODO: ajouter les blocs de liste des cours adultes */}
+        <RenderBlocks blocks={layoutCoursAdulte} />
         <p>
           Si vous hésitez entre deux créneaux,{' '}
           <Link href="/contact">contactez-moi</Link>: Je vous aide à choisir
@@ -72,6 +72,7 @@ export default async function Cours() {
           postures adaptées, petites explorations de l’équilibre et un temps
           calme en fin de séance.
         </p>
+        <RenderBlocks blocks={layoutCoursEnfant} />
       </div>
     </main>
   )

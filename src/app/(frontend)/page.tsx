@@ -17,13 +17,14 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('accueil')
-  const { layout } = page || {}
+  const { layoutHome } = page || {}
 
   return (
     <main id="home">
       {draft && <LivePreviewListener />}
 
       <HomeHero />
+      <RenderBlocks blocks={layoutHome} />
 
       <p className="container">
         Tu cours partout, tu passes beaucoup de temps dans ta tête, et ton corps
@@ -35,8 +36,6 @@ export default async function Home() {
         construit la pratique ensemble, semaine après semaine. Débutant·e
         bienvenu·e, corps raide accepté, mental en vrac aussi 😉
       </p>
-
-      <RenderBlocks blocks={layout} />
 
       <div className="container">
         <h2>Un yoga simple, complet, et surtout accessible</h2>

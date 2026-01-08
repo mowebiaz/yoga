@@ -6,13 +6,13 @@ import { getPage } from '@/utilities/getPage'
 export default async function Contact() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('contact')
-  const { layout } = page || {}
+  const { layoutContact } = page || {}
   return (
     <main>
       {draft && <LivePreviewListener />}
 
       <h1>Contact</h1>
-      <RenderBlocks blocks={layout} />
+      <RenderBlocks blocks={layoutContact} />
     </main>
   )
 }

@@ -8,13 +8,13 @@ import './About.scss'
 export default async function About() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('a-propos')
-  const { layout } = page || {}
+  const { layoutAbout } = page || {}
   return (
     <main id="about">
       {draft && <LivePreviewListener />}
 
       <h1>Qui suis-je ?</h1>
-      <RenderBlocks blocks={layout} />
+      <RenderBlocks blocks={layoutAbout} />
       <div className="container">
         <p>
           Je m’appelle Mélanie, et j’enseigne le yoga dans Grenoble et sa

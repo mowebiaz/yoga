@@ -259,9 +259,29 @@ export interface Page {
   title: string;
   slug: string;
   /**
-   * Ajotez des blocs de contenu.
+   * Ajoutez des blocs de contenu.
    */
-  layout?: (InfoMessageBlock | WorkshopBlock)[] | null;
+  layoutHome?: InfoMessageBlock[] | null;
+  /**
+   * Ajoutez des blocs de contenu.
+   */
+  layoutCoursAdulte?: WorkshopBlock[] | null;
+  /**
+   * Ajoutez des blocs de contenu.
+   */
+  layoutCoursEnfant?: WorkshopBlock[] | null;
+  /**
+   * Ajoutez des blocs de contenu.
+   */
+  layoutWorkshops?: (InfoMessageBlock | WorkshopBlock)[] | null;
+  /**
+   * Ajoutez des blocs de contenu.
+   */
+  layoutAbout?: InfoMessageBlock[] | null;
+  /**
+   * Ajoutez des blocs de contenu.
+   */
+  layoutContact?: InfoMessageBlock[] | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -509,11 +529,36 @@ export interface UsersSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  layout?:
+  layoutHome?:
+    | T
+    | {
+        infoMessage?: T | InfoMessageBlockSelect<T>;
+      };
+  layoutCoursAdulte?:
+    | T
+    | {
+        workshop?: T | WorkshopBlockSelect<T>;
+      };
+  layoutCoursEnfant?:
+    | T
+    | {
+        workshop?: T | WorkshopBlockSelect<T>;
+      };
+  layoutWorkshops?:
     | T
     | {
         infoMessage?: T | InfoMessageBlockSelect<T>;
         workshop?: T | WorkshopBlockSelect<T>;
+      };
+  layoutAbout?:
+    | T
+    | {
+        infoMessage?: T | InfoMessageBlockSelect<T>;
+      };
+  layoutContact?:
+    | T
+    | {
+        infoMessage?: T | InfoMessageBlockSelect<T>;
       };
   updatedAt?: T;
   createdAt?: T;
