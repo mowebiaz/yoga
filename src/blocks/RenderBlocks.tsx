@@ -1,17 +1,21 @@
 // src/components/RenderBlocks.tsx
 import { InfoMessageBlock } from '@/blocks/InfoMessage/Component'
 import type { Page } from '@/payload-types'
+import { AdultCourseBlock } from './AdultCourse/Component'
+import { ChildrenCourseBlock } from './ChildrenCourse/Component'
 import { WorkshopBlock } from './Workshop/Component'
 
 const blockComponents = {
   infoMessage: InfoMessageBlock,
   workshop: WorkshopBlock,
+  adultCourse: AdultCourseBlock,
+  childrenCourse: ChildrenCourseBlock,
 }
 
 type PageLayout =
   | Page['layoutHome']
-  | Page['layoutCoursAdulte']
-  | Page['layoutCoursEnfant']
+  | Page['layoutAdultCourse']
+  | Page['layoutChildrenCourse']
   | Page['layoutWorkshops']
   | Page['layoutAbout']
   | Page['layoutContact']
@@ -36,6 +40,7 @@ export const RenderBlocks: React.FC<{
               return (
                 <div
                   //className="my-16"
+                  className={block.blockType}
                   key={'id' in block && block.id ? block.id : index}
                 >
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}

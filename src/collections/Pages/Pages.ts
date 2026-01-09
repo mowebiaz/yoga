@@ -1,4 +1,6 @@
 import { CollectionConfig } from 'payload'
+import { AdultCourse } from '@/blocks/AdultCourse/config'
+import { ChildrenCourse } from '@/blocks/ChildrenCourse/config'
 import { InfoMessage } from '@/blocks/InfoMessage/config'
 import { Workshop } from '@/blocks/Workshop/config'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -61,30 +63,30 @@ export const Pages: CollectionConfig = {
       },
     },
     {
-      name: 'layoutCoursAdulte',
+      name: 'layoutAdultCourse',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'Cours adultes',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: 'blocs',
       },
-      blocks: [Workshop],
+      blocks: [AdultCourse, InfoMessage],
       admin: {
-        description: 'Ajoutez des blocs de contenu.',
+        description: 'Ajoutez un cours adulte',
         condition: (data) => data?.slug === 'cours',
       },
     },
     {
-      name: 'layoutCoursEnfant',
+      name: 'layoutChildrenCourse',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'Cours enfants',
       labels: {
         singular: 'un Bloc',
         plural: ' des Blocs',
       },
-      blocks: [Workshop],
+      blocks: [ChildrenCourse, InfoMessage],
       admin: {
-        description: 'Ajoutez des blocs de contenu.',
+        description: 'Ajoutez un cours enfant.',
         condition: (data) => data?.slug === 'cours',
       },
     },

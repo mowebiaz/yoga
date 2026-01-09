@@ -3,15 +3,14 @@ import { RichText } from '@/components/RichText/RichText'
 import type { InfoMessageBlock as InfoMessageBlockProps } from '@/payload-types'
 import './InfoMessage.scss'
 
-
 type Props = {
   className?: string
 } & InfoMessageBlockProps
 
 export const InfoMessageBlock: React.FC<Props> = ({
-  className,
   style,
   content,
+  className,
 }) => {
   return (
     <div className={className}>

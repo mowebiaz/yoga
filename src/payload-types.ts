@@ -70,6 +70,7 @@ export interface Config {
     media: Media;
     users: User;
     pages: Page;
+    places: Place;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +81,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    places: PlacesSelect<false> | PlacesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -263,13 +265,13 @@ export interface Page {
    */
   layoutHome?: InfoMessageBlock[] | null;
   /**
-   * Ajoutez des blocs de contenu.
+   * Ajoutez un cours adulte
    */
-  layoutCoursAdulte?: WorkshopBlock[] | null;
+  layoutAdultCourse?: (AdultCourseBlock | InfoMessageBlock)[] | null;
   /**
-   * Ajoutez des blocs de contenu.
+   * Ajoutez un cours enfant.
    */
-  layoutCoursEnfant?: WorkshopBlock[] | null;
+  layoutChildrenCourse?: (ChildrenCourseBlock | InfoMessageBlock)[] | null;
   /**
    * Ajoutez des blocs de contenu.
    */
@@ -310,6 +312,48 @@ export interface InfoMessageBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'infoMessage';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AdultCourseBlock".
+ */
+export interface AdultCourseBlock {
+  type: 'hatha' | 'yin';
+  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vencredi' | 'samedi' | 'dimanche';
+  startTime: string;
+  endTime: string;
+  place: number | Place;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'adultCourse';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "places".
+ */
+export interface Place {
+  id: number;
+  name: string;
+  address: string;
+  zip: string;
+  city: string;
+  googleMapsLink?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ChildrenCourseBlock".
+ */
+export interface ChildrenCourseBlock {
+  type: '3-6' | '7-10' | '11-14';
+  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vencredi' | 'samedi' | 'dimanche';
+  startTime: string;
+  endTime: string;
+  place: number | Place;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'childrenCourse';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -357,6 +401,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'places';
+        value: number | Place;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -534,15 +582,17 @@ export interface PagesSelect<T extends boolean = true> {
     | {
         infoMessage?: T | InfoMessageBlockSelect<T>;
       };
-  layoutCoursAdulte?:
+  layoutAdultCourse?:
     | T
     | {
-        workshop?: T | WorkshopBlockSelect<T>;
+        adultCourse?: T | AdultCourseBlockSelect<T>;
+        infoMessage?: T | InfoMessageBlockSelect<T>;
       };
-  layoutCoursEnfant?:
+  layoutChildrenCourse?:
     | T
     | {
-        workshop?: T | WorkshopBlockSelect<T>;
+        childrenCourse?: T | ChildrenCourseBlockSelect<T>;
+        infoMessage?: T | InfoMessageBlockSelect<T>;
       };
   layoutWorkshops?:
     | T
@@ -576,6 +626,32 @@ export interface InfoMessageBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AdultCourseBlock_select".
+ */
+export interface AdultCourseBlockSelect<T extends boolean = true> {
+  type?: T;
+  dayOfWeek?: T;
+  startTime?: T;
+  endTime?: T;
+  place?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ChildrenCourseBlock_select".
+ */
+export interface ChildrenCourseBlockSelect<T extends boolean = true> {
+  type?: T;
+  dayOfWeek?: T;
+  startTime?: T;
+  endTime?: T;
+  place?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "WorkshopBlock_select".
  */
 export interface WorkshopBlockSelect<T extends boolean = true> {
@@ -583,6 +659,19 @@ export interface WorkshopBlockSelect<T extends boolean = true> {
   description?: T;
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "places_select".
+ */
+export interface PlacesSelect<T extends boolean = true> {
+  name?: T;
+  address?: T;
+  zip?: T;
+  city?: T;
+  googleMapsLink?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

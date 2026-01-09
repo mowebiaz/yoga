@@ -24,8 +24,25 @@
     }
 }
 
+@mixin lg2 {
+    @media (min-width: $breakpoint-lg2) {
+        @content;
+    }
+}
+
 @mixin xl {
     @media (min-width: $breakpoint-xl) {
         @content;
     }
+}
+
+@mixin card {
+        display: flex;
+    flex-direction: column;
+    background-color: $card;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid $border;
+    gap: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }

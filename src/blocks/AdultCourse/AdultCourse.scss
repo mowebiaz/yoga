@@ -1,0 +1,28 @@
+@use '@/styles/scss/variables' as *;
+@use '@/styles/scss/mixins' as *;
+
+.adult-course {
+    @include card;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        line-height: 1.4;
+        h3 {
+            font-family: var(--font-fraunces);
+        }
+    }
+
+    &__place {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        line-height: 1.25;
+        a {
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+    }
+}

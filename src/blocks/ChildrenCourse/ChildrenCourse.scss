@@ -1,0 +1,48 @@
+@use '@/styles/scss/mixins' as *;
+@use '@/styles/scss/variables' as *;
+
+.children-course {
+    @include card;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        line-height: 1.4;
+
+        .age {
+            border-radius: 5px;
+            padding: 0.25rem 0.5rem;
+            box-shadow: none;
+        }
+
+        .age--3-6 {
+            background-color: $secondary;
+        }
+
+        .age--7-10 {
+            background-color: $accent;
+        }
+
+        .age--11-14 {
+            background-color: $background;
+        }
+
+        h3 {
+            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        }
+    }
+
+    &__place {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        line-height: 1.25;
+        a {
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+    }
+}

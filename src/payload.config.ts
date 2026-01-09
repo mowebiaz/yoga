@@ -10,11 +10,12 @@ import { buildConfig } from 'payload'
 import sharp from 'sharp'
 //import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
+import { Pages } from './collections/Pages/Pages'
+import { Places } from './collections/Places'
 import { Users } from './collections/Users/config'
 import { defaultLexical } from './components/RichText/defaultLexical'
 //import { Logos } from './globals/Logos'
 import { getServerSideURL } from './utilities/getURL'
-import { Pages } from './collections/Pages/Pages'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -50,7 +51,7 @@ export default buildConfig({
       }, */
       beforeNavLinks: [],
       afterNavLinks: [],
-/*       beforeDashboard: [
+      /*       beforeDashboard: [
         {
           path: '@/components/Admin/ui/beforeDashboard.tsx',
           exportName: 'Welcome',
@@ -121,7 +122,7 @@ Logo: {
   editor: defaultLexical,
 
   // Define and configure your collections in this array
-  collections: [Media, Users, Pages],
+  collections: [Media, Users, Pages, Places],
   //globals: [Logos],
 
   // Your Payload secret - should be a complex and secure string, unguessable
@@ -181,6 +182,4 @@ Logo: {
       clientUploads: true,
     }),
   ],
-
-
 })

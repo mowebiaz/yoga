@@ -8,7 +8,7 @@ import './Cours.scss'
 export default async function Cours() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('cours')
-  const { layoutCoursAdulte, layoutCoursEnfant } = page || {}
+  const { layoutAdultCourse, layoutChildrenCourse } = page || {}
 
   return (
     <main id="cours">
@@ -36,6 +36,10 @@ export default async function Cours() {
         <p>Vous n’avez rien à prouver. Juste à venir pratiquer.</p>
         <h2>Infos pratiques</h2>
         <p>
+          <span className="text-accent">Inscriptions:</span> Les inscriptions se
+          font au trimestre ou à l&apos;année.
+        </p>
+        <p>
           <span className="text-accent">Période:</span> les cours réguliers ont
           lieu sur l’année scolaire (septembre → juin). Pas de cours pendant les
           vacances scolaires (sauf ateliers ponctuels indiqués dans la page{' '}
@@ -47,10 +51,6 @@ export default async function Cours() {
           tapis à disposition). Prévoyez d’arriver au moins 5 minutes avant le
           début du cours pour vous installer tranquillement.
         </p>
-        <p>
-          <span className="text-accent">Inscriptions:</span> Les inscriptions se
-          font au trimestre ou à l&apos;année (avec une réduction de 10%).
-        </p>
         <h2>Cours adultes</h2>
         <p>
           Ici, vous trouverez des cours pensés pour vous accompagner dans votre
@@ -59,12 +59,24 @@ export default async function Cours() {
           sont plus toniques, d’autres plus doux. Vous pouvez choisir selon vos
           besoins.
         </p>
-        <RenderBlocks blocks={layoutCoursAdulte} />
         <p>
           Si vous hésitez entre deux créneaux,{' '}
           <Link href="/contact">contactez-moi</Link>: Je vous aide à choisir
           celui qui correspond le mieux à votre rythme et à vos envies.
         </p>
+        <p className="text-accent">Tarifs:</p>
+        <ul>
+          <li>pour un seul trimestre: 143 € le trimestre.</li>
+          <li>
+            Pour une année scolaire: 381 €. Peut être réglé en trois chèques de
+            127€, à fournir lors du premier cours de septembre. Au démarrage de
+            chaque trimestre, un chèque sera encaissé.
+          </li>
+          <li>Cours d’essai possible en début d&apos;année: 10€</li>
+        </ul>
+        <div className="courses-container">
+          <RenderBlocks blocks={layoutAdultCourse} />
+        </div>
         <h2>Cours enfants</h2>
         <p>
           Des cours ludiques et structurés, pour bouger, se concentrer et se
@@ -72,7 +84,9 @@ export default async function Cours() {
           postures adaptées, petites explorations de l’équilibre et un temps
           calme en fin de séance.
         </p>
-        <RenderBlocks blocks={layoutCoursEnfant} />
+        <div className="courses-container">
+          <RenderBlocks blocks={layoutChildrenCourse} />
+        </div>
       </div>
     </main>
   )

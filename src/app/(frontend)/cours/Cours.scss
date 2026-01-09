@@ -1,7 +1,42 @@
+@use '@/styles/scss/mixins' as *;
+
 #cours {
     li {
         margin-left: 1rem;
         //list-style-image: url('/images/lotus.svg');
-        list-style-type:square;
+        list-style-type: square;
+    }
+
+    .courses-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin: 1.5rem 0;
+
+        @include sm {
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        @include xl {
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        .adultCourse,
+        .childrenCourse {
+            grid-column: span 4;
+        }
+
+        .infoMessage {
+            grid-column: span 4;
+
+            @include sm {
+                grid-column: span 8;
+            }
+
+            @include xl {
+                grid-column: span 12;
+            }
+        }
     }
 }
