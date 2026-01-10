@@ -3,7 +3,7 @@ import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { LivePreviewListener } from '@/components/LivePreviewListener/LivePreviewListener'
 import { getPage } from '@/utilities/getPage'
 
-export default async function Contact() {
+export default async function ContactPage() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('contact')
   const { layoutContact } = page || {}

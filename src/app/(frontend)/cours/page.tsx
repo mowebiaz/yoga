@@ -5,7 +5,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener/LivePrevie
 import { getPage } from '@/utilities/getPage'
 import './Cours.scss'
 
-export default async function Cours() {
+export default async function CoursesPage() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('cours')
   const { layoutAdultCourse, layoutChildrenCourse } = page || {}
@@ -43,7 +43,7 @@ export default async function Cours() {
           <span className="text-accent">Période:</span> les cours réguliers ont
           lieu sur l’année scolaire (septembre → juin). Pas de cours pendant les
           vacances scolaires (sauf ateliers ponctuels indiqués dans la page{' '}
-          <Link href="/actu-ateliers">Actu &Ateliers</Link>).
+          <Link href="/ateliers">Ateliers</Link>).
         </p>
         <p>
           <span className="text-accent">Matériel:</span> venez avec une tenue

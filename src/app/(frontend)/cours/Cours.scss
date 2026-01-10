@@ -11,7 +11,8 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
-        margin: 1.5rem 0;
+        margin: 1.5rem auto;
+
 
         @include sm {
             grid-template-columns: repeat(8, 1fr);

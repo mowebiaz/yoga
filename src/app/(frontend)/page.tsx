@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Cours de yoga à Grenoble : souffle, mobilité, ancrage. Une pratique accessible et progressive, en petit groupe, avec ateliers ponctuels. Planning et tarifs en ligne.',
 }
 
-export default async function Home() {
+export default async function HomePage() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('accueil')
   const { layoutHome } = page || {}
@@ -133,7 +133,7 @@ export default async function Home() {
         <p>Prochain atelier:</p>
         {/* /// TODO: afficher le dernier atelier ou un message s'il n'y en a pas */}
         <Link
-          href="/actu-ateliers"
+          href="/ateliers"
           className="btn btn--primary"
         >
           Voir tous les ateliers

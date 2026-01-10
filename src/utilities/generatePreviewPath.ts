@@ -28,8 +28,8 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
       case 'cours':
         path = '/cours'
         break
-      case 'actu-ateliers':
-        path = '/actu-ateliers'
+      case 'ateliers':
+        path = '/ateliers'
         break
       case 'a-propos':
         path = '/a-propos'

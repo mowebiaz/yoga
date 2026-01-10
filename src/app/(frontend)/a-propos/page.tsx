@@ -5,7 +5,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener/LivePrevie
 import { getPage } from '@/utilities/getPage'
 import './About.scss'
 
-export default async function About() {
+export default async function AboutPage() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('a-propos')
   const { layoutAbout } = page || {}
@@ -51,8 +51,8 @@ export default async function About() {
 
         <h2>Mon parcours</h2>
         <p>
-          Je me suis formée auprès de [école / professeur / lignée], avec une
-          formation de [XXX heures]. Je continue à me former régulièrement,
+          Je me suis formée à l&apos;École Française de Yoga Auvergne Rhône-Alpes, avec une
+          formation s&apos;étalant sur 4 ans. Je continue à me former régulièrement,
           parce que j’aime apprendre, affiner, et enrichir ma transmission.
         </p>
 

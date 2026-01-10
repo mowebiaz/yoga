@@ -275,7 +275,7 @@ export interface Page {
   /**
    * Ajoutez des blocs de contenu.
    */
-  layoutWorkshops?: (InfoMessageBlock | WorkshopBlock)[] | null;
+  layoutWorkshops?: WorkshopBlock[] | null;
   /**
    * Ajoutez des blocs de contenu.
    */
@@ -361,6 +361,11 @@ export interface ChildrenCourseBlock {
  */
 export interface WorkshopBlock {
   title: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  place: number | Place;
+  image?: (number | null) | Media;
   description?: string | null;
   id?: string | null;
   blockName?: string | null;
@@ -597,7 +602,6 @@ export interface PagesSelect<T extends boolean = true> {
   layoutWorkshops?:
     | T
     | {
-        infoMessage?: T | InfoMessageBlockSelect<T>;
         workshop?: T | WorkshopBlockSelect<T>;
       };
   layoutAbout?:
@@ -656,6 +660,11 @@ export interface ChildrenCourseBlockSelect<T extends boolean = true> {
  */
 export interface WorkshopBlockSelect<T extends boolean = true> {
   title?: T;
+  date?: T;
+  startTime?: T;
+  endTime?: T;
+  place?: T;
+  image?: T;
   description?: T;
   id?: T;
   blockName?: T;

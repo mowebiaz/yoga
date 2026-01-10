@@ -98,10 +98,10 @@ export const Pages: CollectionConfig = {
         singular: 'un Bloc',
         plural: ' des Blocs',
       },
-      blocks: [InfoMessage, Workshop],
+      blocks: [Workshop],
       admin: {
         description: 'Ajoutez des blocs de contenu.',
-        condition: (data) => data?.slug === 'actu-ateliers',
+        condition: (data) => data?.slug === 'ateliers',
       },
     },
     {

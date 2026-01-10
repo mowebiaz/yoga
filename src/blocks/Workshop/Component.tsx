@@ -1,14 +1,133 @@
-import type { WorkshopBlock as WorkshopBlockProps } from '@/payload-types'
+'use client'
 
-type Props = {
-  className?: string
-} & WorkshopBlockProps
+import { useRef } from 'react'
+import Image from 'next/image'
+import type {
+  Place,
+  WorkshopBlock as WorkshopBlockProps,
+} from '@/payload-types'
+import { formatFrenchDate } from '@/utilities/formatFrenchDate'
+import './Workshop.scss'
 
-export const WorkshopBlock: React.FC<Props> = ({ className, title, description }) => {
+type Props = WorkshopBlockProps & { place: Place }
+
+export const WorkshopBlock: React.FC<Props> = ({
+  title,
+  date,
+  startTime,
+  endTime,
+  description,
+  place,
+  image,
+}) => {
+  const ref = useRef<HTMLDialogElement | null>(null)
+  const closeModal = () => {
+    ref.current?.close()
+  }
+
+  const openModal = () => {
+    ref.current?.showModal()
+  }
+
+  if (ref.current) {
+    ref.current.addEventListener('click', (event) => {
+      if (event.target === ref.current) {
+        closeModal()
+      }
+    })
+  }
+
   return (
-    <div className={className}>
-      <h2>{title}</h2>
-      {description && <p>{description}</p>}
-    </div>
+    <>
+      <article className="workshop-card">
+        {image && typeof image === 'object' && image.url ? (
+          <div className="workshop-card__image">
+            image
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+            />
+          </div>
+        ) : (
+          <div className="workshop-card__image default">
+            <p>Pas d&apos;image</p>
+            <Image
+              src={'/images/yoga-grenoble.webp'}
+              alt={"pas d'image"}
+              fill
+              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+            />
+            <div className="overlay"></div>
+          </div>
+        )}
+
+        <div className="workshop-card__content">
+          <h3>{title}</h3>
+          <div>
+            <p>{formatFrenchDate(date)}</p>
+            <p>{`${startTime} - ${endTime}`}</p>
+          </div>
+          <div className="place">
+            <p>
+              {place?.name} <br /> {place?.address} <br /> {place?.zip}{' '}
+              {place?.city}
+            </p>
+            {place?.googleMapsLink && (
+              <a
+                href={place.googleMapsLink}
+                target="_blank"
+                rel="no-opener no-referrer"
+              >
+                Voir la carte
+              </a>
+            )}
+          </div>
+          <div className="workshop-card__info">
+            {description ? (
+              <button
+                onClick={openModal}
+                className="btn btn--secondary"
+              >
+                Plus d&apos;info
+              </button>
+            ) : (
+              <p className="text-italic">infos sur demande</p>
+            )}
+          </div>
+        </div>
+      </article>
+
+      <dialog
+        ref={ref}
+        className="workshop-modal"
+      >
+        <div className="workshop-card__content">
+          <h3>{title}</h3>
+          <div>
+            <p>{formatFrenchDate(date)}</p>
+            <p>{`${startTime} - ${endTime}`}</p>
+          </div>
+          <div className="place">
+            <p>
+              {place?.name} <br /> {place?.address} <br /> {place?.zip}{' '}
+              {place?.city}
+            </p>
+            {place?.googleMapsLink && (
+              <a
+                href={place.googleMapsLink}
+                target="_blank"
+                rel="no-opener no-referrer"
+              >
+                Voir la carte
+              </a>
+            )}
+          </div>
+          <div>{description}</div>
+          <button onClick={closeModal}>X</button>
+        </div>
+      </dialog>
+    </>
   )
 }
