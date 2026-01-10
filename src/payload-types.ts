@@ -275,7 +275,7 @@ export interface Page {
   /**
    * Ajoutez des blocs de contenu.
    */
-  layoutWorkshops?: WorkshopBlock[] | null;
+  layoutWorkshops?: (WorkshopBlock | RetreatBlock)[] | null;
   /**
    * Ajoutez des blocs de contenu.
    */
@@ -366,10 +366,53 @@ export interface WorkshopBlock {
   endTime: string;
   place: number | Place;
   image?: (number | null) | Media;
-  description?: string | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'workshop';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RetreatBlock".
+ */
+export interface RetreatBlock {
+  title: string;
+  startDate: string;
+  endDate: string;
+  place: number | Place;
+  image?: (number | null) | Media;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'retreat';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -603,6 +646,7 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         workshop?: T | WorkshopBlockSelect<T>;
+        retreat?: T | RetreatBlockSelect<T>;
       };
   layoutAbout?:
     | T
@@ -663,6 +707,20 @@ export interface WorkshopBlockSelect<T extends boolean = true> {
   date?: T;
   startTime?: T;
   endTime?: T;
+  place?: T;
+  image?: T;
+  description?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RetreatBlock_select".
+ */
+export interface RetreatBlockSelect<T extends boolean = true> {
+  title?: T;
+  startDate?: T;
+  endDate?: T;
   place?: T;
   image?: T;
   description?: T;

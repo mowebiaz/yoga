@@ -34,8 +34,8 @@ export const defaultLexical = lexicalEditor({
     HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
     StrikethroughFeature(),
     TextStateFeature({ state: textState }),
-/*     LinkFeature({
-      enabledCollections: ['posts'],
+    LinkFeature({
+      enabledCollections: ['pages'],
       fields: ({ defaultFields }) => {
         const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
           if ('name' in field && field.name === 'url') return false
@@ -64,6 +64,6 @@ export const defaultLexical = lexicalEditor({
           },
         ]
       },
-    }), */
+    }),
   ],
 })

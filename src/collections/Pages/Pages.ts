@@ -8,6 +8,7 @@ import admin from '../Users/access/admin'
 import { anyone } from '../Users/access/anyone'
 import editor from '../Users/access/editor'
 import { revalidatePage, revalidatePageDelete } from './hooks/revalidatePage'
+import { Retreat } from '@/blocks/Retreat/config'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -98,7 +99,7 @@ export const Pages: CollectionConfig = {
         singular: 'un Bloc',
         plural: ' des Blocs',
       },
-      blocks: [Workshop],
+      blocks: [Workshop, Retreat],
       admin: {
         description: 'Ajoutez des blocs de contenu.',
         condition: (data) => data?.slug === 'ateliers',

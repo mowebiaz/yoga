@@ -3,20 +3,16 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { RichText } from '@/components/RichText/RichText'
-import type {
-  Place,
-  WorkshopBlock as WorkshopBlockProps,
-} from '@/payload-types'
+import type { Place, RetreatBlock as RetreatBlockProps } from '@/payload-types'
 import { formatFrenchDate } from '@/utilities/formatFrenchDate'
-import './Workshop.scss'
+import '../Workshop/Workshop.scss'
 
-type Props = WorkshopBlockProps & { place: Place }
+type Props = RetreatBlockProps & { place: Place }
 
-export const WorkshopBlock: React.FC<Props> = ({
+export const RetreatBlock: React.FC<Props> = ({
   title,
-  date,
-  startTime,
-  endTime,
+  startDate,
+  endDate,
   description,
   place,
   image,
@@ -67,8 +63,8 @@ export const WorkshopBlock: React.FC<Props> = ({
         <div className="workshop-card__content">
           <h3>{title}</h3>
           <div>
-            <p>{formatFrenchDate(date)}</p>
-            <p>{`${startTime} - ${endTime}`}</p>
+            <p>{`du ${formatFrenchDate(startDate)}`}</p>
+            <p>{`au ${formatFrenchDate(endDate)}`}</p>
           </div>
           <div className="place">
             <p>
@@ -107,8 +103,8 @@ export const WorkshopBlock: React.FC<Props> = ({
         <div className="workshop-card__content">
           <h3>{title}</h3>
           <div>
-            <p>{formatFrenchDate(date)}</p>
-            <p>{`${startTime} - ${endTime}`}</p>
+            <p>{`du ${formatFrenchDate(startDate)}`}</p>
+            <p>{`au ${formatFrenchDate(endDate)}`}</p>
           </div>
           <div className="place">
             <p>

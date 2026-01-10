@@ -4,12 +4,14 @@ import type { Page } from '@/payload-types'
 import { AdultCourseBlock } from './AdultCourse/Component'
 import { ChildrenCourseBlock } from './ChildrenCourse/Component'
 import { WorkshopBlock } from './Workshop/Component'
+import { RetreatBlock } from './Retreat/Component'
 
 const blockComponents = {
   infoMessage: InfoMessageBlock,
   workshop: WorkshopBlock,
   adultCourse: AdultCourseBlock,
   childrenCourse: ChildrenCourseBlock,
+  retreat: RetreatBlock,
 }
 
 type PageLayout =
