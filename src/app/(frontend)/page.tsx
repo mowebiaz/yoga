@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { HomeHero } from '@/components/HomeHero/HomeHero'
 import { LivePreviewListener } from '@/components/LivePreviewListener/LivePreviewListener'
+import { ReviewCard } from '@/components/ReviewCard/ReviewCard'
+import { reviews } from '@/data/reviews'
 import { getPage } from '@/utilities/getPage'
 import './page.scss'
 
@@ -162,7 +164,17 @@ export default async function HomePage() {
         </Link>
       </div>
 
-      <div>Section témoignages</div>
+      <div className="container">
+        <h2>Ils en parlent mieux que moi</h2>
+        <div className="reviews">
+          {reviews.map((review) => (
+            <ReviewCard
+              key={review.id}
+              review={review}
+            />
+          ))}
+        </div>
+      </div>
 
       <div className="container">
         <h2>Tu veux essayer ?</h2>
