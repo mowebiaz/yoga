@@ -84,20 +84,19 @@ Logo: {
       }, */
     },
     meta: {
-      titleSuffix: ' - Mon application Payload',
-      title: 'blanck payload',
-      description: 'this is exemple for educational purpose only',
+      titleSuffix: ' - Mon application yoga',
+      title: 'yoga',
       // Admin panel favicon
       icons: [
         {
-          url: '/faviconui_light.svg',
+          url: '/icons/faviconui_light.svg',
           rel: 'icon',
           type: 'image/png',
           sizes: '16x16 32x32 64x64',
           fetchPriority: 'high',
         },
         {
-          url: '/faviconui_dark.svg',
+          url: '/icons/faviconui_dark.svg',
           rel: 'icon',
           type: 'image/png',
           sizes: '16x16 32x32 64x64',
