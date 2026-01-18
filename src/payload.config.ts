@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
-//import { resendAdapter } from '@payloadcms/email-resend'
+import { resendAdapter } from '@payloadcms/email-resend'
 //import { seoPlugin } from '@payloadcms/plugin-seo'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
@@ -154,11 +154,11 @@ Logo: {
       fileSize: 5000000,
     },
   },
-  /*   email: resendAdapter({
-    defaultFromAddress: 'onboarding@resend.dev',
-    defaultFromName: 'Mowebiaz de Payload CMS',
+    email: resendAdapter({
+    defaultFromAddress: 'mw@notifications.morganeweb.com',
+    defaultFromName: 'MorganeWeb',
     apiKey: process.env.RESEND_API_KEY || '',
-  }), */
+  }),
 
   sharp,
 
