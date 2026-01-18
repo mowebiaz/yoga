@@ -127,21 +127,6 @@ export interface UserAuthOperations {
 export interface Media {
   id: number;
   nom?: string | null;
-  caption?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
   /**
    * Texte alternatif de l'image, utilisé pour l'accessibilité et le SEO
    */
@@ -502,7 +487,6 @@ export interface PayloadMigration {
  */
 export interface MediaSelect<T extends boolean = true> {
   nom?: T;
-  caption?: T;
   alt?: T;
   creditText?: T;
   photographe?: T;

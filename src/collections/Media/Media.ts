@@ -1,11 +1,7 @@
-import {
-  FixedToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import type { CollectionConfig } from 'payload'
-import { anyone } from './Users/access/anyone'
-import user from './Users/access/user'
-import editor from './Users/access/editor'
+import { anyone } from '../Users/access/anyone'
+import editor from '../Users/access/editor'
+import user from '../Users/access/user'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -18,23 +14,19 @@ export const Media: CollectionConfig = {
   admin: {
     useAsTitle: 'nom',
     defaultColumns: ['nom', 'filename', 'alt'],
+    components: {
+      beforeListTable: [
+        {
+          path: 'src/collections/Media/components/beforeList.tsx',
+          exportName: 'BeforeListContent',
+        },
+      ],
+    },
   },
   fields: [
     {
       name: 'nom',
       type: 'text',
-      /*       admin: {
-        position: 'sidebar',
-      }, */
-    },
-    {
-      name: 'caption',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature()]
-        },
-      }),
     },
     {
       name: 'alt',
@@ -42,14 +34,14 @@ export const Media: CollectionConfig = {
       required: true,
       admin: {
         description:
-        'Texte alternatif de l\'image, utilisé pour l\'accessibilité et le SEO',
+          "Texte alternatif de l'image, utilisé pour l'accessibilité et le SEO",
       },
     },
     {
       name: 'creditText',
       type: 'text',
       admin: {
-        description: 'Texte de crédit pour l\'image (ex: source de l\'image)',
+        description: "Texte de crédit pour l'image (ex: source de l'image)",
         placeholder: 'Image générée avec Midjourney',
       },
     },
