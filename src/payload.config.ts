@@ -67,21 +67,18 @@ export default buildConfig({
         { path: '@/components/Admin/ui/logout.tsx', exportName: 'Logout' },
       ],
 
-      /*graphics: {
-      
-         
-// en-tête de la fenêtre de login
-Logo: {
-          path: '@/components/Admin/ui/logo.tsx',
-          exportName: 'Logo',
-        }, */
-      /*
+      graphics: {
+        // en-tête de la fenêtre de login
+        Logo: {
+          path: '@/components/Admin/ui/BrandLogo.tsx',
+          exportName: 'BrandLogo',
+        },
         // icône de la navigation dans l'ui
         Icon: {
-          path: '@/components/Admin/ui/icon.tsx',
-          exportName: 'Icon',
+          path: '@/components/Admin/ui/BrandIcon.tsx',
+          exportName: 'BrandIcon',
         },
-      }, */
+      },
     },
     meta: {
       titleSuffix: ' - Mon application yoga',
@@ -153,7 +150,7 @@ Logo: {
       fileSize: 5000000,
     },
   },
-    email: resendAdapter({
+  email: resendAdapter({
     defaultFromAddress: 'mw@notifications.morganeweb.com',
     defaultFromName: 'MorganeWeb',
     apiKey: process.env.RESEND_API_KEY || '',

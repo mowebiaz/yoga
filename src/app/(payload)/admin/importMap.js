@@ -18,6 +18,8 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { TextStateFeatureClient as TextStateFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { LinkFeatureClient as LinkFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { default as default_ae2ca3c7814c0f3a047337229fb3ba09 } from '@/components/Avatar/Avatar.tsx'
+import { BrandIcon as BrandIcon_3d440bb70b96d2b4c2748d5b3186dde2 } from '@/components/Admin/ui/BrandIcon.tsx'
+import { BrandLogo as BrandLogo_de7b12af9364593aab91b59bd937733c } from '@/components/Admin/ui/BrandLogo.tsx'
 import { Logout as Logout_62f08f92b00a7306634db9272517c36a } from '@/components/Admin/ui/logout.tsx'
 import { LoginInstruction as LoginInstruction_b7867967b91dbf7d5a30e5848bd2d55c } from '@/components/Admin/ui/afterLogin.tsx'
 import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
@@ -43,6 +45,8 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#TextStateFeatureClient": TextStateFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#LinkFeatureClient": LinkFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@/components/Avatar/Avatar.tsx#default": default_ae2ca3c7814c0f3a047337229fb3ba09,
+  "@/components/Admin/ui/BrandIcon.tsx#BrandIcon": BrandIcon_3d440bb70b96d2b4c2748d5b3186dde2,
+  "@/components/Admin/ui/BrandLogo.tsx#BrandLogo": BrandLogo_de7b12af9364593aab91b59bd937733c,
   "@/components/Admin/ui/logout.tsx#Logout": Logout_62f08f92b00a7306634db9272517c36a,
   "@/components/Admin/ui/afterLogin.tsx#LoginInstruction": LoginInstruction_b7867967b91dbf7d5a30e5848bd2d55c,
   "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e
