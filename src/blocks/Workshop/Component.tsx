@@ -1,6 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
+import { IoMdCloseCircle } from 'react-icons/io'
 import Image from 'next/image'
 import { RichText } from '@/components/RichText/RichText'
 import type {
@@ -104,12 +106,14 @@ export const WorkshopBlock: React.FC<Props> = ({
         ref={ref}
         className="workshop-modal"
       >
-        <div className="workshop-card__content">
-          <h3>{title}</h3>
+        <h3>{title}</h3>
+        <div className="workshop-modal__content">
+          <FaCalendarAlt color="#532755" />
           <div>
             <p>{formatFrenchDate(date)}</p>
             <p>{`${startTime} - ${endTime}`}</p>
           </div>
+          <FaMapMarkerAlt color="#532755" />
           <div className="place">
             <p>
               {place?.name} <br /> {place?.address} <br /> {place?.zip}{' '}
@@ -125,8 +129,17 @@ export const WorkshopBlock: React.FC<Props> = ({
               </a>
             )}
           </div>
-          {description && <RichText data={description} />}
-          <button onClick={closeModal}>X</button>
+
+          <div className="workshop-modal__description">
+            {description && <RichText data={description} />}
+          </div>
+
+          <button onClick={closeModal}>
+            <IoMdCloseCircle
+              size={30}
+              color="#532755"
+            />
+          </button>
         </div>
       </dialog>
     </>
