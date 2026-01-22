@@ -10,7 +10,7 @@ type CommonProps = {
   className?: string
   id?: string // to force a different id from the name
   layout?: 'stack' | 'inline' // inline = checkbox/radio
-  afterControl?: React.ReactNode // ex: right custom label for checkbox/radio
+  aftercontrol?: React.ReactNode // ex: right custom label for checkbox/radio
 }
 
 type InputProps = CommonProps &
@@ -67,7 +67,7 @@ export const FormField: React.FC<FormFieldProps> = (props) => {
             />
           )}
 
-          {props.afterControl}
+          {props.aftercontrol}
         </div>
 
         {error && (

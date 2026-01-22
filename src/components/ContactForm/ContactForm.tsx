@@ -3,8 +3,8 @@
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { IoMdCloseCircle } from 'react-icons/io'
+import { LuLoader } from 'react-icons/lu'
 import Link from 'next/link'
-//import { Loader } from '@/src/components/Loader/loader'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { contactSchema, FormData, ValidFieldNames } from './contact-types'
 import { FormField } from './FormField'
@@ -17,16 +17,28 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid, touchedFields, isSubmitted },
     reset,
     setError,
     clearErrors,
-  } = useForm({ resolver: zodResolver(contactSchema), mode: 'onBlur' })
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+    mode: 'onChange',
+    reValidateMode: 'onChange',
+  })
 
   const closeDialog = () => {
     reset()
     clearErrors()
     dialogRef.current?.close()
+  }
+
+  if (dialogRef.current) {
+    dialogRef.current.addEventListener('click', (event) => {
+      if (event.target === dialogRef.current) {
+        closeDialog()
+      }
+    })
   }
 
   const onSubmit = async (data: FormData) => {
@@ -81,7 +93,7 @@ export function ContactForm() {
         payload?.message ?? "Une erreur s'est produite. Réessayez plus tard.",
       )
     } catch (error) {
-      setGlobalError('Submitting form failed! (réseau ou serveur)')
+      setGlobalError("Une erreur s'est produite. Réessayez plus tard.")
     }
   }
 
@@ -93,12 +105,13 @@ export function ContactForm() {
         noValidate
       >
         <FormField
+          autoFocus={true}
           name="name"
           label="Nom *"
           type="text"
           placeholder="Nom"
           register={register}
-          error={errors.name}
+          error={touchedFields.name || isSubmitted ? errors.name : undefined}
           autoComplete="name"
           className="contact-form__field"
         />
@@ -109,7 +122,7 @@ export function ContactForm() {
           type="email"
           placeholder="Email"
           register={register}
-          error={errors.email}
+          error={touchedFields.email || isSubmitted ? errors.email : undefined}
           autoComplete="email"
           className="contact-form__field"
         />
@@ -120,7 +133,9 @@ export function ContactForm() {
           label="Message *"
           placeholder="Message"
           register={register}
-          error={errors.message}
+          error={
+            touchedFields.message || isSubmitted ? errors.message : undefined
+          }
           className="contact-form__field"
         />
 
@@ -129,19 +144,20 @@ export function ContactForm() {
             type="checkbox"
             name="accepted"
             register={register}
-            error={errors.accepted}
+            error={
+              touchedFields.accepted || isSubmitted
+                ? errors.accepted
+                : undefined
+            }
             id="accepted"
             layout="inline"
-            afterControl={
+            aftercontrol={
               <label
                 htmlFor="accepted"
                 className="checkbox"
               >
                 J&apos;ai lu et j&apos;accepte la{' '}
-                <Link
-                  href="/politique-de-confidentialite"
-                  className="link"
-                >
+                <Link href="/politique-de-confidentialite">
                   politique de confidentialité
                 </Link>
               </label>
@@ -163,7 +179,7 @@ export function ContactForm() {
         {globalError && (
           <div
             role="alert"
-            className="alert"
+            className="error-message"
           >
             {globalError}
           </div>
@@ -171,20 +187,33 @@ export function ContactForm() {
 
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isValid}
+          className={`btn btn--secondary ${isSubmitting ? 'is-loading' : ''}`}
         >
-          {isSubmitting ? 'loading' : 'Envoyer'}
+          <span className="btn__text">Envoyer</span>
+          <span
+            className="btn__loader"
+            aria-hidden={!isSubmitting}
+          >
+            <LuLoader />
+          </span>
         </button>
       </form>
 
-      <dialog ref={dialogRef}>
-        <p>Merci pour votre message.</p>
+      <dialog
+        ref={dialogRef}
+        className="contact-dialog"
+      >
+        <p>Votre message a bien été envoyé.</p>
         <button
           type="button"
           onClick={closeDialog}
           aria-label="Fermer"
         >
-          Fermer
+          <IoMdCloseCircle
+            size={30}
+            color="#f9f0e9"
+          />
         </button>
       </dialog>
     </>
