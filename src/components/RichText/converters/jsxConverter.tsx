@@ -10,7 +10,7 @@ import {
 //import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { InfoMessageBlock } from '@/blocks/InfoMessage/Component'
 import type { InfoMessageBlock as InfoMessageBlockProps } from '@/payload-types'
-//import { internalDocToHref } from '@/components/RichText/converters/internalLink'
+import { internalDocToHref } from '@/components/RichText/converters/internalLink'
 import { textConverter } from './textConverter'
 
 type NodeTypes =
@@ -21,7 +21,7 @@ export const jsxConverter: JSXConvertersFunction<NodeTypes> = ({
   defaultConverters,
 }) => ({
   ...defaultConverters,
-  //...LinkJSXConverter({ internalDocToHref }),
+  ...LinkJSXConverter({ internalDocToHref }),
   ...textConverter,
   blocks: {
     /*     mediaBlock: ({ node }) => (
