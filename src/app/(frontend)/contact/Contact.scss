@@ -1,0 +1,19 @@
+#contact {
+    .phone {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    .insta {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        svg {
+            flex-shrink: 0;
+        }
+    }
+}
