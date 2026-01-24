@@ -1,10 +1,111 @@
 @use '@/styles/scss/variables' as *;
+@use '@/styles/scss/mixins' as *;
 
-footer {
-  height: 100px;
-  background-color: oklch(24.834% 0.05985 324.415);
-  color: $background;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.footer {
+    background-color: oklch(24.834% 0.05985 324.415);
+    color: $background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1.8rem;
+
+    p {
+        font-size: 1rem;
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.8rem;
+        @include md {
+            flex-direction: row;
+        }
+    }
+
+    &__identity {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        flex-shrink: 0;
+        @include md {
+            width: max-content;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+    &__right {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 4rem;
+        @include md {
+            width: 100%;
+            align-self: center;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 14px;
+
+        .footer__copyright {
+            text-align: center;
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .footer__links {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__contact {
+        text-align: center;
+    }
+
+    &__pages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+            list-style-type: none;
+            text-align: center;
+        }
+    }
+
+    p.footer__title {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .footer-link {
+        color: $accent;
+        text-decoration: none;
+        outline: none;
+        padding: 5px;
+        transition: all 200ms ease-in-out;
+        &:hover {
+            color: $secondary;
+            border-radius: 5px;
+        }
+    }
 }
