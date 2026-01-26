@@ -25,11 +25,21 @@ export const Retreat: Block = {
       name: 'startDate',
       type: 'date',
       required: true,
+      admin: {
+        date: {
+          displayFormat: 'dd/MM/yyyy',
+        },
+      },
     },
     {
       name: 'endDate',
       type: 'date',
       required: true,
+      admin: {
+        date: {
+          displayFormat: 'dd/MM/yyyy',
+        },
+      },
     },
 
     {

@@ -25,6 +25,11 @@ export const Workshop: Block = {
       name: 'date',
       type: 'date',
       required: true,
+      admin: {
+        date: {
+          displayFormat: 'dd/MM/yyyy',
+        },
+      }
     },
     {
       name: 'startTime',
