@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,12 +9,6 @@ import { reviews } from '@/data/reviews'
 import { getPage } from '@/utilities/getPage'
 import './page.scss'
 
-export const metadata: Metadata = {
-  title: 'Cours de yoga à Grenoble | Yoga accessible & bienveillant',
-  description:
-    'Cours de yoga à Grenoble : souffle, mobilité, ancrage. Une pratique accessible et progressive, en petit groupe, avec ateliers ponctuels. Planning et tarifs en ligne.',
-}
-
 export default async function HomePage() {
   const { isEnabled: draft } = await draftMode()
   const page = await getPage('accueil')
@@ -26,7 +19,10 @@ export default async function HomePage() {
       {draft && <LivePreviewListener />}
 
       <HomeHero />
-      <RenderBlocks blocks={layoutHome} />
+
+      <div className="container">
+        <RenderBlocks blocks={layoutHome} />
+      </div>
 
       <p className="container">
         Tu cours partout, tu passes beaucoup de temps dans ta tête, et ton corps
@@ -132,8 +128,6 @@ export default async function HomePage() {
         Selon les périodes, ça peut être: mobilité (hanches, dos, épaules),
         respiration & apaisement, yoga du soir / détente profonde, routines
         simples à refaire chez soi...
-        <p>Prochain atelier:</p>
-        {/* /// TODO: afficher le dernier atelier ou un message s'il n'y en a pas */}
         <Link
           href="/ateliers"
           className="btn btn--primary"
