@@ -104,6 +104,7 @@ export default async function CoursesPage() {
       <main id="cours">
         {draft && <LivePreviewListener />}
         <h1>Mes cours réguliers</h1>
+
         <div className="container">
           <p>
             Que vous veniez pour bouger, souffler, vous assouplir ou simplement
@@ -113,7 +114,11 @@ export default async function CoursesPage() {
             L’idée : progresser à votre rythme, dans une ambiance simple et
             bienveillante.
           </p>
-          <h2>À quoi ressemble un cours ?</h2>
+</div>
+
+        <div className="container">
+
+          <h2>À quoi ressemble un cours&#8239;?</h2>
           Un cours dure en général 1h15. Chaque séance est différente, mais on
           retrouve souvent :
           <ul>
@@ -124,6 +129,9 @@ export default async function CoursesPage() {
             <li>une relaxation finale (oui, la vraie ✨)</li>
           </ul>
           <p>Vous n’avez rien à prouver. Juste à venir pratiquer.</p>
+          </div>
+
+        <div className="container">
           <h2>Infos pratiques</h2>
           <p>
             <span className="text-accent">Inscriptions:</span> Les inscriptions
@@ -148,6 +156,9 @@ export default async function CoursesPage() {
             tapis à disposition). Prévoyez d’arriver au moins 5 minutes avant le
             début du cours pour vous installer tranquillement.
           </p>
+        </div>
+
+        <div className="container">
           <h2>Cours adultes</h2>
           <p>
             Ici, vous trouverez des cours pensés pour vous accompagner dans
@@ -177,9 +188,13 @@ export default async function CoursesPage() {
             </li>
             <li>Cours d’essai possible en début d&apos;année: 10€</li>
           </ul>
+
           <div className="courses-container">
             <RenderBlocks blocks={layoutAdultCourse} />
           </div>
+        </div>
+
+        <div className="container">
           <h2>Cours enfants</h2>
           <p>
             Des cours ludiques et structurés, pour bouger, se concentrer et se

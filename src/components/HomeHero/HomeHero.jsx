@@ -16,7 +16,7 @@ export const HomeHero = () => {
       </div>
       <div className="home-hero__content">
         <h1 className="home-hero__title">Cours de yoga à Grenoble</h1>
-        <p className='home-hero__tagline'>pour respirer, bouger, et te sentir bien</p>
+        <p className='home-hero__tagline'>pour respirer, bouger, te sentir bien</p>
         <div className="home-hero__cta">
           <Link
             className="btn btn--primary"

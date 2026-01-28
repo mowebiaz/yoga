@@ -30,14 +30,22 @@ export default async function HomePage() {
         simple : te proposer un yoga accessible, dans une ambiance chaleureuse,
         pour revenir au corps, respirer, et retrouver un peu d’espace. Les
         séances sont progressives, avec des options à chaque étape. Tu n’as pas
-        besoin d’être souple, ni “déjà à l’aise” : tu viens comme tu es, et on
-        construit la pratique ensemble, semaine après semaine. Débutant·e
-        bienvenu·e, corps raide accepté, mental en vrac aussi 😉
+        besoin d’être souple, ni &quot;déjà à l’aise&quot; : tu viens comme tu
+        es, et on construit la pratique ensemble, semaine après semaine.
+        Débutant·e bienvenu·e, corps raide accepté, mental en vrac aussi 😉
       </p>
 
       <div className="container">
         <h2>Un yoga simple, complet, et surtout accessible</h2>
-        <div className="content-with-image left">
+        <div className="content-with-image right">
+          <div className="image-container">
+            <Image
+              src={'/images/yoga-accessible.webp'}
+              alt="Un cours de yoga pour une pratique adaptable"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+            />
+          </div>
           <div>
             <p>
               Dans mes cours, on prend le temps. On bouge pour délier, on
@@ -58,27 +66,12 @@ export default async function HomePage() {
               <li>et un rendez-vous régulier avec toi-même</li>
             </ul>
           </div>
-          <div className="image-container">
-            <Image
-              src={'/images/about-me.webp'}
-              alt="professeur de yoga"
-              fill
-              // sizes
-            />
-          </div>
         </div>
       </div>
 
       <div className="container">
         <h2>Les cours à Grenoble : horaires, lieux et tarifs</h2>
-        <div className="content-with-image right">
-          <div className="image-container ">
-            <Image
-              src={'/images/cours-collectifs-de-yoga.webp'}
-              alt="Salle de yoga à Grenoble"
-              fill
-            />
-          </div>
+        <div className="content-with-image left">
           <div>
             <p>
               Je propose des cours réguliers à Grenoble, dans des lieux où on se
@@ -93,6 +86,21 @@ export default async function HomePage() {
               <li>les lieux et infos pratiques</li>
               <li>les tarifs (séance à l’unité, cartes, etc.)</li>
             </ul>
+            <Link
+              href="/ateliers"
+              className="btn btn--primary"
+            >
+              Voir tous les cours
+            </Link>
+          </div>
+          <div className="image-container ">
+            <Image
+              src={'/images/cours-collectifs-de-yoga.webp'}
+              alt="Salle de yoga à Grenoble"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+              className="bottom"
+            />
           </div>
         </div>
       </div>
@@ -112,28 +120,53 @@ export default async function HomePage() {
           <li>simplement en recherche d’un moment régulier pour souffler</li>
         </ul>
         <p>
-          Et si tu te dis “je suis trop raide”, “je n’ai pas le niveau”, “je ne
-          vais pas suivre”… c’est souvent précisément pour ça que ça fait du
-          bien de venir. On avance progressivement, et tu n’as rien à prouver.
+          Et si tu te dis{' '}
+          <span className="text-italic">je suis trop raide</span>,{' '}
+          <span className="text-italic">je n’ai pas le niveau</span>,{' '}
+          <span className="text-italic">je ne vais pas suivre</span>, … c’est
+          souvent précisément pour ça que ça fait du bien de venir. On avance
+          progressivement, et tu n’as rien à prouver.
         </p>
       </div>
 
       <div className="container">
         <h2>Ateliers thématiques et événements ponctuels</h2>
-        <p>
-          En plus des cours hebdomadaires, j’organise parfois des ateliers : un
-          format un peu plus long, pour explorer une thématique en profondeur,
-          prendre le temps, et repartir avec des repères concrets.
-        </p>
-        Selon les périodes, ça peut être: mobilité (hanches, dos, épaules),
-        respiration & apaisement, yoga du soir / détente profonde, routines
-        simples à refaire chez soi...
-        <Link
-          href="/ateliers"
-          className="btn btn--primary"
-        >
-          Voir tous les ateliers
-        </Link>
+        <div className="content-with-image left">
+          <div>
+            <p>
+              En plus des cours hebdomadaires, j’organise parfois des{' '}
+              <span className="text-accent">ateliers</span> : un format un peu
+              plus long, pour explorer une thématique en profondeur, prendre le
+              temps, et repartir avec des repères concrets. Selon les périodes,
+              ça peut être: mobilité (hanches, dos, épaules), respiration &
+              apaisement, yoga du soir / détente profonde, routines simples à
+              refaire chez soi...
+            </p>
+            <p>
+              Et ponctuellement, je propose aussi des{' '}
+              <span className="text-accent">retraites</span> : quelques jours
+              pour décrocher du rythme du quotidien, pratiquer plus en
+              profondeur, et s’offrir une vraie parenthèse (yoga, respiration,
+              temps calme…). Les prochaines dates et informations sont annoncées
+              au fur et à mesure, lorsqu’une retraite est programmée.
+            </p>
+
+            <Link
+              href="/ateliers"
+              className="btn btn--primary"
+            >
+              Voir les ateliers
+            </Link>
+          </div>
+          <div className="image-container">
+            <Image
+              src={'/images/atelier-yoga.webp'}
+              alt="Atelier de yoga à Grenoble"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="container">
@@ -179,6 +212,12 @@ export default async function HomePage() {
           comment tu te sens. Le plus dur, souvent, c’est juste de venir la
           première fois.
         </p>
+        <Link
+          href="/contact"
+          className="btn btn--primary"
+        >
+          Me contacter
+        </Link>
       </div>
     </main>
   )

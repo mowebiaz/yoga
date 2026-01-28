@@ -1,6 +1,10 @@
 @use '@/styles/scss/mixins' as *;
 
 #home {
+    .btn {
+        display: block;
+        margin: 1rem 0 0.5rem 0;
+    }
     .content-with-image {
         display: grid;
         grid-template-columns: 1fr;
@@ -15,10 +19,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             img {
                 object-fit: cover;
-                object-position: bottom center;
+                //object-position: bottom center;
+                &.bottom {
+                    object-position: bottom center;
+                }
             }
         }
     }
+
+    .content-with-image.right {
+        margin-top: 1rem;
+    }
+
     @include md {
         .content-with-image.right {
             grid-template-columns: 1fr 2fr;

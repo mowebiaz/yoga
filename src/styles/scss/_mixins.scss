@@ -45,11 +45,10 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: $card;
     border: 1px solid $border;
+    height: 100%;
 }
 
 @mixin link {
-    font: inherit;
-    cursor: pointer;
     color: oklch(53.94% 0.137 262.68);
     text-decoration: dotted underline;
     text-underline-offset: 3px;
