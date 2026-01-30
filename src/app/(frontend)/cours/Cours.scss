@@ -1,22 +1,12 @@
 @use '@/styles/scss/mixins' as *;
 
 #cours {
-    li {
-        margin-left: 1rem;
-        list-style-image: url('/icons/marker.svg');
-        //list-style-type: square;
-/*         &::marker {
-            content: '🪷';
-
-        } */
-    }
 
     .courses-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
         margin: 1.5rem auto 0 auto;
-
 
         @include sm {
             grid-template-columns: repeat(8, 1fr);

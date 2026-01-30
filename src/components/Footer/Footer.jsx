@@ -1,4 +1,3 @@
-import { FaSquareInstagram } from 'react-icons/fa6'
 import Image from 'next/image'
 import Link from 'next/link'
 import './Footer.scss'
@@ -10,7 +9,7 @@ export const Footer = () => {
         <div className="footer__identity">
           <div>
             <Image
-              src={'/icons/favicon-dark.svg'}
+              src={'/icons/logo-dark.svg'}
               alt="Logo Mel'Yoga"
               width={40}
               height={40}

@@ -1,4 +1,3 @@
-import { defaultColors } from '@payloadcms/richtext-lexical/client'
 import { SerializedTextNode } from '@payloadcms/richtext-lexical'
 import { JSXConverters } from '@payloadcms/richtext-lexical/react'
 import type {
@@ -9,7 +8,6 @@ import { CSSProperties } from 'react'
 
 export const colorState: TextStateFeatureProps['state'] = {
   color: {
-    //...defaultColors.text,
     text: {
       label: 'Violet',
       css: {
@@ -31,7 +29,6 @@ export const colorState: TextStateFeatureProps['state'] = {
 
   },
   background: {
-    //...defaultColors.background,
     primarybkg: {
       label: 'Violet',
       css: {

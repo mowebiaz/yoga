@@ -75,8 +75,8 @@ export default buildConfig({
         },
         // icône de la navigation dans l'ui
         Icon: {
-          path: '@/components/Admin/ui/BrandIcon.tsx',
-          exportName: 'BrandIcon',
+          path: '@/components/Admin/ui/HomeIcon.tsx',
+          exportName: 'HomeIcon',
         },
       },
     },

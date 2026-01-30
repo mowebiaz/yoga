@@ -42,7 +42,7 @@ export const NavMobile = () => {
           aria-label="Accueil"
         >
           <Image
-            src="/icons/favicon-dark.svg"
+            src="/icons/logo-dark.svg"
             alt=""
             width={50}
             height={50}

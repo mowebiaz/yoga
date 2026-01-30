@@ -57,13 +57,10 @@ export const Users: CollectionConfig = {
     {
       name: 'lastName',
       type: 'text',
-      //required: true,
     },
     {
       name: 'firstName',
       type: 'text',
-      //required: true,
     },
-    // Email added by default
   ],
 }

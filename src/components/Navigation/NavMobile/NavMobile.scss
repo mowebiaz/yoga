@@ -16,7 +16,7 @@ nav.nav-mobile {
     .logo-container {
         z-index: 101;
     }
-    
+
     .hamburger-react {
         z-index: 101;
     }
@@ -37,7 +37,16 @@ nav.nav-mobile {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
+            width: max-content;
+            margin: 0 auto;
+
+            li {
+                width: 100%;
+                a {
+                    padding-inline: 1rem;
+                }
+            }
         }
     }
 }

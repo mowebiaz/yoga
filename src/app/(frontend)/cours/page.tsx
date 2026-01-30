@@ -114,10 +114,9 @@ export default async function CoursesPage() {
             L’idée : progresser à votre rythme, dans une ambiance simple et
             bienveillante.
           </p>
-</div>
+        </div>
 
         <div className="container">
-
           <h2>À quoi ressemble un cours&#8239;?</h2>
           Un cours dure en général 1h15. Chaque séance est différente, mais on
           retrouve souvent :
@@ -129,7 +128,7 @@ export default async function CoursesPage() {
             <li>une relaxation finale (oui, la vraie ✨)</li>
           </ul>
           <p>Vous n’avez rien à prouver. Juste à venir pratiquer.</p>
-          </div>
+        </div>
 
         <div className="container">
           <h2>Infos pratiques</h2>

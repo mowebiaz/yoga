@@ -60,6 +60,7 @@ export default async function WorshopPage() {
       <main id="worshops">
         {draft && <LivePreviewListener />}
         <h1>Ateliers et retraites</h1>
+
         <div className="container">
           <p className="text-accent">
             Envie de prendre un peu plus de temps pour toi ?
@@ -74,7 +75,9 @@ export default async function WorshopPage() {
             </span>
             , où tu peux bouger, respirer, te déposer… et repartir plus légère.
           </p>
+        </div>
 
+        <div className="container">
           <h2>Ateliers thématiques</h2>
           <p>
             Les ateliers sont des moments un peu “hors du quotidien”, souvent
@@ -94,6 +97,9 @@ export default async function WorshopPage() {
             je propose toujours des options pour adapter. L’important, c’est de
             venir comme tu es.
           </p>
+        </div>
+
+        <div className="container">
           <h2>Retraites</h2>
           <p>
             Les retraites, c’est une parenthèse plus longue. Quelques jours pour
@@ -110,7 +116,9 @@ export default async function WorshopPage() {
             </span>
             . Tu viens pour te faire du bien, pas pour “réussir” quelque chose.
           </p>
+        </div>
 
+        <div className="container">
           <h2>Evènements à venir</h2>
           <div className="worshops-container">
             <RenderBlocks blocks={layoutWorkshops} />

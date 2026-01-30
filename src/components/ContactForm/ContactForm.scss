@@ -8,11 +8,14 @@
     flex-direction: column;
     gap: 1.5rem;
     background-color: $primary;
-    padding: 1rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
     border-radius: 10px;
     width: 90vw;
     max-width: 900px;
     margin: 2rem 0;
+    @include md {
+        padding: 0.5rem 2rem 2rem 2rem;
+    }
 
     input,
     textarea {
@@ -139,6 +142,11 @@
             outline-offset: 3px;
             border-radius: 6px;
         }
+    }
+    &__asterisk {
+        color: $background;
+        text-align: right;
+        font-size: 14px;
     }
 }
 

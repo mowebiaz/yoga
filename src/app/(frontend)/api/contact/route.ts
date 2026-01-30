@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { contactSchema } from '@/components/ContactForm/contact-types'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const email = process.env.EMAIL
 
 export async function POST(request: Request) {
   try {
@@ -25,9 +26,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true }, { status: 200 })
     }
 
+    if (!email) {
+      return NextResponse.json(
+        { success: false, error: 'Missing CONTACT_TO_EMAIL' },
+        { status: 500 },
+      )
+    }
+
     await resend.emails.send({
       from: 'MorganeWeb <mw@notifications.morganeweb.com>',
-      to: 'contact@morganeweb.com',
+      to: email,
       subject: `Nouveau message de ${result.data.name} sur yoga.morganeweb.com`,
       replyTo: result.data.email,
 

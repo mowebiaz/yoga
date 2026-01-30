@@ -22,7 +22,7 @@ body {
 }
 
 body {
-    min-height: 100vh; // min-height because of use of motion.dev useScroll animations
+    min-height: 100vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -46,11 +46,11 @@ main {
 .container {
     padding: 1rem;
     @include md {
-        padding: 1.5rem 2rem;
+        padding: 1.25rem 2rem;
     }
 
     @include xl {
-        padding: 1.5rem 4rem;
+        padding: 1.25rem 4rem;
     }
 }
 
@@ -112,14 +112,12 @@ h2 {
     line-height: 1.15;
     //font-size: clamp(1.3rem, 1.127rem + 0.739vw, 1.6rem);
     font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
-    //margin-bottom: clamp(1.3rem, 1.127rem + 0.739vw, 1.6rem);
     margin-top: clamp(1.3rem, 1.127rem + 0.739vw, 1.6rem);
     margin-bottom: 0.5rem;
 }
 
 h3 {
     font-size: clamp(1.25rem, 1.106rem + 0.616vw, 1.5rem);
-    //color: hsla(0, 0%, 20%, 1);
 }
 
 .text-italic {
@@ -136,8 +134,8 @@ h3 {
     text-decoration-thickness: 1px;
 }
 
-ul, ol {
-    list-style-position: inside;
+ul {
+    padding-left: clamp(1.5rem, 2vw + 1rem, 2rem);
 }
 
 hr {

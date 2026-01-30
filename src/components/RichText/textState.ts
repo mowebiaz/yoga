@@ -1,10 +1,9 @@
-import { defaultColors, TextStateFeature } from '@payloadcms/richtext-lexical'
+import { TextStateFeature } from '@payloadcms/richtext-lexical'
 
 type TextState = NonNullable<Parameters<typeof TextStateFeature>[0]>['state']
 
 export const textState: TextState = {
   color: {
-    //...defaultColors.text,
     text: {
       label: 'Violet',
       css: {
@@ -14,19 +13,17 @@ export const textState: TextState = {
     secondary: {
       label: 'Saumon',
       css: {
-        color: '#faa98c'
-      }
+        color: '#faa98c',
+      },
     },
     accent: {
       label: 'Bleu',
       css: {
-        color: '#8ea6d7'
-      }
-    }
-
+        color: '#8ea6d7',
+      },
+    },
   },
   background: {
-    //...defaultColors.background,
     primarybkg: {
       label: 'Violet',
       css: {
@@ -36,15 +33,15 @@ export const textState: TextState = {
     secondarybkg: {
       label: 'Saumon',
       css: {
-        'background-color': '#faa98c'
-      }
+        'background-color': '#faa98c',
+      },
     },
     accentbkg: {
       label: 'Bleu',
       css: {
-        'background-color': '#8ea6d7'
-      }
-    }
+        'background-color': '#8ea6d7',
+      },
+    },
   },
   size: {
     large: {

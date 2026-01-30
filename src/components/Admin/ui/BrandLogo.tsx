@@ -3,12 +3,12 @@ export const BrandLogo = () => {
     <span className="brand-logo" aria-label="Yoga">
       <img
         className="brand-logo__img brand-logo__img--light"
-        src="/icons/favicon-light.svg"
+        src="/icons/logo-light.svg"
         alt="Logo"
       />
       <img
         className="brand-logo__img brand-logo__img--dark"
-        src="/icons/favicon-dark.svg"
+        src="/icons/logo-dark.svg"
         alt="Logo"
       />
     </span>

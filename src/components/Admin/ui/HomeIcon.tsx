@@ -1,17 +1,17 @@
 import { IoHome } from 'react-icons/io5'
 
-export const BrandIcon = () => {
+export const HomeIcon = () => {
   return (
     <>
       <IoHome
         size={20}
         color="#532755"
-        className="brand-icon--light"
+        className="home-icon--light"
       />
       <IoHome
         size={20}
         color="#faa98c"
-        className="brand-icon--dark"
+        className="home-icon--dark"
       />
     </>
   )

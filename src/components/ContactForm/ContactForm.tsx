@@ -104,6 +104,10 @@ export function ContactForm() {
         className="contact-form"
         noValidate
       >
+        <span className="contact-form__asterisk text-italic">
+          * Champs obligatoires
+        </span>
+
         <FormField
           autoFocus={true}
           name="name"

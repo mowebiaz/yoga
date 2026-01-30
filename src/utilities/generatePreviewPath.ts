@@ -1,11 +1,5 @@
 import { PayloadRequest } from 'payload'
 
-/* const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  posts: '/blog',
-  // pour pages, on va gérer au cas par cas
-  pages: '',
-} */
-
 type Props = {
   collection: 'posts' | 'pages'
   slug: string
@@ -20,7 +14,6 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
   if (collection === 'posts') {
     path = `/blog/${slug}`
   } else if (collection === 'pages') {
-    // 👉 mapping entre les slugs Payload et les vraies routes Next
     switch (slug) {
       case 'accueil':
         path = '/'
@@ -38,7 +31,6 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
         path = '/contact'
         break
       default:
-        // fallback, si un jour tu as une route /[slug]
         path = `/${slug}`
     }
   } else {

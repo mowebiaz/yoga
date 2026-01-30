@@ -6,10 +6,8 @@ import type { Block } from 'payload'
 
 export const InfoMessage: Block = {
   slug: 'infoMessage',
-  //The image container uses a 3:2 aspect ratio (e.g., 480x320 pixels)
-  /*   imageURL:
-    'https://cdn.pixabay.com/photo/2021/02/27/06/08/lines-6053765_1280.png',
-  imageAltText: 'bloc avec une image et du texte', */
+  imageURL: '/images/info-message.webp',
+  imageAltText: 'message d’information',
   fields: [
     {
       name: 'style',

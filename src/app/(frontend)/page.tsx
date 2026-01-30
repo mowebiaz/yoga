@@ -27,25 +27,17 @@ export default async function HomePage() {
       <p className="container">
         Tu cours partout, tu passes beaucoup de temps dans ta tête, et ton corps
         te le rappelle (tensions, fatigue, raideur…) ?<br /> Ici, l’idée est
-        simple : te proposer un yoga accessible, dans une ambiance chaleureuse,
+        simple : te proposer un yoga <span className='text-accent'>accessible</span>, dans une ambiance chaleureuse,
         pour revenir au corps, respirer, et retrouver un peu d’espace. Les
         séances sont progressives, avec des options à chaque étape. Tu n’as pas
-        besoin d’être souple, ni &quot;déjà à l’aise&quot; : tu viens comme tu
+        besoin d’être souple, ni <span className='text-italic'>déjà à l’aise</span> : tu viens comme tu
         es, et on construit la pratique ensemble, semaine après semaine.
         Débutant·e bienvenu·e, corps raide accepté, mental en vrac aussi 😉
       </p>
 
       <div className="container">
         <h2>Un yoga simple, complet, et surtout accessible</h2>
-        <div className="content-with-image right">
-          <div className="image-container">
-            <Image
-              src={'/images/yoga-accessible.webp'}
-              alt="Un cours de yoga pour une pratique adaptable"
-              fill
-              sizes={'(max-width: 768px) 100vw, 30vw'}
-            />
-          </div>
+        <div className="content-with-image left">
           <div>
             <p>
               Dans mes cours, on prend le temps. On bouge pour délier, on
@@ -56,7 +48,8 @@ export default async function HomePage() {
               avec des consignes claires, et je propose toujours des variantes.
               L’objectif, c’est que tu te sentes en confiance, et que tu
               ressortes de la séance avec cette sensation :{' '}
-              <span className="text-italic">ok, là… je respire mieux</span>. A
+              <span className="text-italic">ok, là… je respire mieux</span>.< br/>
+              A
               la clé:
             </p>
             <ul>
@@ -66,12 +59,29 @@ export default async function HomePage() {
               <li>et un rendez-vous régulier avec toi-même</li>
             </ul>
           </div>
+          <div className="image-container">
+            <Image
+              src={'/images/yoga-accessible.webp'}
+              alt="Un cours de yoga pour une pratique adaptable"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+            />
+          </div>
         </div>
       </div>
 
       <div className="container">
         <h2>Les cours à Grenoble : horaires, lieux et tarifs</h2>
-        <div className="content-with-image left">
+        <div className="content-with-image right">
+          <div className="image-container ">
+            <Image
+              src={'/images/cours-collectifs-de-yoga.webp'}
+              alt="Salle de yoga à Grenoble"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+              className="bottom"
+            />
+          </div>
           <div>
             <p>
               Je propose des cours réguliers à Grenoble, dans des lieux où on se
@@ -93,15 +103,6 @@ export default async function HomePage() {
               Voir tous les cours
             </Link>
           </div>
-          <div className="image-container ">
-            <Image
-              src={'/images/cours-collectifs-de-yoga.webp'}
-              alt="Salle de yoga à Grenoble"
-              fill
-              sizes={'(max-width: 768px) 100vw, 30vw'}
-              className="bottom"
-            />
-          </div>
         </div>
       </div>
 
@@ -114,16 +115,16 @@ export default async function HomePage() {
         </p>
         <p>Beaucoup de personnes viennent parce qu’elles se sentent :</p>
         <ul>
-          <li>stressées, dispersées, “toujours en tension”</li>
+          <li>stressées, dispersées, toujours en tension</li>
           <li>raides ou fatiguées, avec un corps qui manque de mobilité</li>
           <li>en reprise sportive, ou avec besoin de douceur</li>
           <li>simplement en recherche d’un moment régulier pour souffler</li>
         </ul>
         <p>
           Et si tu te dis{' '}
-          <span className="text-italic">je suis trop raide</span>,{' '}
-          <span className="text-italic">je n’ai pas le niveau</span>,{' '}
-          <span className="text-italic">je ne vais pas suivre</span>, … c’est
+          &quot;je suis trop raide&quot;,
+          &quot;je n’ai pas le niveau&quot;,{' '}
+          &quot;je ne vais pas suivrer&quot; … c’est
           souvent précisément pour ça que ça fait du bien de venir. On avance
           progressivement, et tu n’as rien à prouver.
         </p>
@@ -131,7 +132,15 @@ export default async function HomePage() {
 
       <div className="container">
         <h2>Ateliers thématiques et événements ponctuels</h2>
-        <div className="content-with-image left">
+        <div className="content-with-image right">
+          <div className="image-container">
+            <Image
+              src={'/images/atelier-yoga.webp'}
+              alt="Atelier de yoga à Grenoble"
+              fill
+              sizes={'(max-width: 768px) 100vw, 30vw'}
+            />
+          </div>
           <div>
             <p>
               En plus des cours hebdomadaires, j’organise parfois des{' '}
@@ -157,14 +166,6 @@ export default async function HomePage() {
             >
               Voir les ateliers
             </Link>
-          </div>
-          <div className="image-container">
-            <Image
-              src={'/images/atelier-yoga.webp'}
-              alt="Atelier de yoga à Grenoble"
-              fill
-              sizes={'(max-width: 768px) 100vw, 30vw'}
-            />
           </div>
         </div>
       </div>

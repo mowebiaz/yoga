@@ -1,4 +1,3 @@
-// src/components/RenderBlocks.tsx
 import { InfoMessageBlock } from '@/blocks/InfoMessage/Component'
 import type { Page } from '@/payload-types'
 import { AdultCourseBlock } from './AdultCourse/Component'
@@ -41,7 +40,6 @@ export const RenderBlocks: React.FC<{
             if (Block) {
               return (
                 <div
-                  //className="my-16"
                   className={block.blockType}
                   key={'id' in block && block.id ? block.id : index}
                 >

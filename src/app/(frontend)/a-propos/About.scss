@@ -1,24 +1,14 @@
 @use '@/styles/scss/mixins' as *;
 
-/* #about .container {
-  img {
-    float: left;
-    border-radius: 50%;
-    shape-outside: margin-box;
-    margin: 20px;
-  }
-} */
-
 #about {
-    .container {
-         display: flex;
+    .about-container {
+        display: flex;
         flex-direction: column;
 
         .image-container {
-          align-self: center;
+            align-self: center;
             position: relative;
-            //width: 80vw;
-            height: 50vh;
+            height: 45vh;
             aspect-ratio: 1 / 1;
             border-radius: 50%;
             overflow: hidden;
@@ -30,7 +20,7 @@
         }
     }
     @include lg {
-        .container {
+        .about-container {
             display: block;
 
             .image-container {
