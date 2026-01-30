@@ -2,29 +2,22 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { resendAdapter } from '@payloadcms/email-resend'
-//import { seoPlugin } from '@payloadcms/plugin-seo'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
 import { fr } from '@payloadcms/translations/languages/fr'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
-//import { Categories } from './collections/Categories'
 import { Media } from './collections/Media/Media'
 import { Pages } from './collections/Pages/Pages'
 import { Places } from './collections/Places'
 import { Users } from './collections/Users/config'
 import { defaultLexical } from './components/RichText/defaultLexical'
-//import { Logos } from './globals/Logos'
-import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const isPreview = process.env.VERCEL_ENV === 'preview'
-const PREVIEW_URL =
-  isPreview && process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : undefined
+const prod = process.env.SITE_URL_PROD
+const dev = process.env.SITE_URL_DEV
 
 export default buildConfig({
   admin: {
@@ -134,15 +127,8 @@ export default buildConfig({
     },
   }),
 
-  cors: [getServerSideURL(), PREVIEW_URL || ''].filter(Boolean),
-  csrf: [getServerSideURL(), PREVIEW_URL || ''].filter(Boolean),
-
-  /*auth: {
-    cookies: {
-      secure: true,
-      sameSite: 'lax',
-      // Surtout PAS de `domain` en preview ! (laisse undefined)
-    },*/
+  cors: [prod || '', dev || ''].filter(Boolean),
+  csrf: [prod || '', dev || ''].filter(Boolean),
 
   upload: {
     //whatever I upload across my entire payload projet to 5 million bytes
