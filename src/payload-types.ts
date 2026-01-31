@@ -304,7 +304,7 @@ export interface InfoMessageBlock {
  */
 export interface AdultCourseBlock {
   type: 'hatha' | 'yin';
-  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vencredi' | 'samedi' | 'dimanche';
+  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vendredi' | 'samedi' | 'dimanche';
   startTime: string;
   endTime: string;
   place: number | Place;
@@ -332,7 +332,7 @@ export interface Place {
  */
 export interface ChildrenCourseBlock {
   type: '3-6' | '7-10' | '11-14';
-  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vencredi' | 'samedi' | 'dimanche';
+  dayOfWeek: 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vendredi' | 'samedi' | 'dimanche';
   startTime: string;
   endTime: string;
   place: number | Place;

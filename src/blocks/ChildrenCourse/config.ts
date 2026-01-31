@@ -27,7 +27,7 @@ export const ChildrenCourse: Block = {
         { label: 'Mardi', value: 'mardi' },
         { label: 'Mercredi', value: 'mercredi' },
         { label: 'Jeudi', value: 'jeudi' },
-        { label: 'Vendredi', value: 'vencredi' },
+        { label: 'Vendredi', value: 'vendredi' },
         { label: 'Samedi', value: 'samedi' },
         { label: 'Dimanche', value: 'dimanche' },
       ],
