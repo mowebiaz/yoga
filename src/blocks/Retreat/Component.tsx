@@ -46,17 +46,17 @@ export const RetreatBlock: React.FC<Props> = ({
               src={image.url}
               alt={image.alt}
               fill
-              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+              sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 25vw"
             />
           </div>
         ) : (
           <div className="workshop-card__image default">
             <p>Pas d&apos;image</p>
             <Image
-              src={'/images/yoga-grenoble.webp'}
+              src={'/images/default-image.webp'}
               alt={"pas d'image"}
               fill
-              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+              sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 25vw"
             />
             <div className="overlay"></div>
           </div>
@@ -130,7 +130,7 @@ export const RetreatBlock: React.FC<Props> = ({
             {description && <RichText data={description} />}
           </div>
 
-          <button onClick={closeModal}>
+          <button onClick={closeModal} aria-label='Fermer la boîte de dialogue'>
             <IoMdCloseCircle
               size={30}
               color="#532755"

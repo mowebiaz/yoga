@@ -132,15 +132,13 @@ export default async function CoursesPage() {
 
         <div className="container">
           <h2>Infos pratiques</h2>
+          <h3>Inscriptions</h3>
+          <p>Les inscriptions se font au trimestre ou à l&apos;année.</p>
+          <h3>Période</h3>
           <p>
-            <span className="text-accent">Inscriptions:</span> Les inscriptions
-            se font au trimestre ou à l&apos;année.
-          </p>
-          <p>
-            <span className="text-accent">Période:</span> les cours réguliers
-            ont lieu sur l’année scolaire (septembre → juin). Pas de cours
-            pendant les vacances scolaires (sauf ateliers ponctuels indiqués
-            dans la page{' '}
+            Les cours réguliers ont lieu sur l’année scolaire (septembre →
+            juin). Pas de cours pendant les vacances scolaires (sauf ateliers
+            ponctuels indiqués dans la page{' '}
             <Link
               href="/ateliers"
               className="link"
@@ -149,11 +147,22 @@ export default async function CoursesPage() {
             </Link>
             ).
           </p>
+          <h3>Tarifs</h3>
+          <ul>
+            <li>pour un seul trimestre: 143 € le trimestre.</li>
+            <li>
+              Pour une année scolaire: 381 €. Peut être réglé en trois chèques
+              de 127€, à fournir lors du premier cours de septembre. Au
+              démarrage de chaque trimestre, un chèque sera encaissé.
+            </li>
+            <li>Cours d’essai possible en début d&apos;année: 10€</li>
+          </ul>
+          <h3>Matériel</h3>
           <p>
-            <span className="text-accent">Matériel:</span> venez avec une tenue
-            confortable. Si vous avez un tapis, prenez-le (sinon nous avons des
-            tapis à disposition). Prévoyez d’arriver au moins 5 minutes avant le
-            début du cours pour vous installer tranquillement.
+            Venez avec une tenue confortable. Si vous avez un tapis, prenez-le
+            (sinon nous avons des tapis à disposition). Prévoyez d’arriver au
+            moins 5 minutes avant le début du cours pour vous installer
+            tranquillement.
           </p>
         </div>
 
@@ -177,16 +186,6 @@ export default async function CoursesPage() {
             : Je vous aide à choisir celui qui correspond le mieux à votre
             rythme et à vos envies.
           </p>
-          <p className="text-accent">Tarifs:</p>
-          <ul>
-            <li>pour un seul trimestre: 143 € le trimestre.</li>
-            <li>
-              Pour une année scolaire: 381 €. Peut être réglé en trois chèques
-              de 127€, à fournir lors du premier cours de septembre. Au
-              démarrage de chaque trimestre, un chèque sera encaissé.
-            </li>
-            <li>Cours d’essai possible en début d&apos;année: 10€</li>
-          </ul>
 
           <div className="courses-container">
             <RenderBlocks blocks={layoutAdultCourse} />

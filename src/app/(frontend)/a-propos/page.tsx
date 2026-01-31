@@ -89,6 +89,7 @@ export default async function AboutPage() {
               src={'/images/about-me.webp'}
               alt="professeur de yoga"
               fill
+              priority={true}
             />
           </div>
 

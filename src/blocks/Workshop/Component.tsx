@@ -50,19 +50,22 @@ export const WorkshopBlock: React.FC<Props> = ({
               src={image.url}
               alt={image.alt}
               fill
-              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+              sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 25vw"
             />
           </div>
         ) : (
           <div className="workshop-card__image default">
-            <p>Pas d&apos;image</p>
+            <p aria-hidden="true">Pas d&apos;image</p>
             <Image
-              src={'/images/yoga-grenoble.webp'}
-              alt={"pas d'image"}
+              src={'/images/default-image.webp'}
+              alt=""
               fill
-              sizes="(max-width: 876px) 100vw, (max-width: 992px) 50vw, 25vw"
+              sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 25vw"
             />
-            <div className="overlay"></div>
+            <div
+              className="overlay"
+              aria-hidden="true"
+            ></div>
           </div>
         )}
 
@@ -134,7 +137,10 @@ export const WorkshopBlock: React.FC<Props> = ({
             {description && <RichText data={description} />}
           </div>
 
-          <button onClick={closeModal}>
+          <button
+            onClick={closeModal}
+            aria-label="Fermer la boîte de dialogue"
+          >
             <IoMdCloseCircle
               size={30}
               color="#532755"

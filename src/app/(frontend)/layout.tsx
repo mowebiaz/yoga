@@ -63,7 +63,6 @@ const layoutJsonLd = {
       '@id': `https://yoga.morganeweb.com/#org`,
       name: "Mel'Yoga",
       url: 'https://yoga.morganeweb.com',
-      inLanguage: 'fr-FR',
       // sameAs: ['https://instagram.com/...'],
     },
     {
@@ -72,7 +71,6 @@ const layoutJsonLd = {
       name: 'Mélanie Yoga',
       jobTitle: 'Professeure de yoga',
       worksFor: { '@id': `https://yoga.morganeweb.com/#org` },
-      areaServed: 'Grenoble et alentours',
       // telephone: '+33...',
       // email: '...',
       // sameAs: ['https://instagram.com/...'],

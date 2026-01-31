@@ -10,7 +10,7 @@ export const HomeHero = () => {
           src="/images/yoga-grenoble.webp"
           alt="yoga en extérieur, ambiance douce et lumineuse"
           fill
-          priority
+          priority={true}
           sizes='100vw'
         />
       </div>

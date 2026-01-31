@@ -100,7 +100,8 @@
     }
 
     .footer-link {
-        color: $accent;
+        //color: $accent;
+        color: oklch(75% 0.077 264.28);
         text-decoration: none;
         outline: none;
         padding: 5px;
