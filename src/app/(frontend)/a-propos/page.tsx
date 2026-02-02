@@ -22,7 +22,7 @@ export const metadata = {
       'Approche, valeurs et parcours : un yoga accessible et respectueux du corps, basé sur la respiration et la progression.',
     images: [
       {
-        url: '/images/opengraph/a-propos.jpg',
+        url: '/images/opengraph/mel-yoga.jpg',
         width: 1200,
         height: 630,
         alt: 'À propos de la professeure de yoga',
