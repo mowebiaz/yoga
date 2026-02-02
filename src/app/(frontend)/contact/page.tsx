@@ -24,7 +24,7 @@ export const metadata = {
       'Réserver un cours ou s’inscrire à un atelier : contact par téléphone (prioritaire) ou via le formulaire.',
     images: [
       {
-        url: '/og/contact.jpg',
+        url: '/images/opengraph/contact.jpg',
         width: 1200,
         height: 630,
         alt: 'Contact et réservation — yoga Grenoble',

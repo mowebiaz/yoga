@@ -21,7 +21,7 @@ export const metadata = {
       'Ateliers et retraites de yoga à Grenoble et alentours : thématiques, dates, lieux et infos pratiques. Places limitées — inscription par téléphone.',
     images: [
       {
-        url: '/og/ateliers-yoga-grenoble.jpg',
+        url: '/images/opengraph/ateliers-yoga-grenoble.jpg',
         width: 1200,
         height: 630,
         alt: 'Ateliers et retraites de yoga à Grenoble',

@@ -37,7 +37,7 @@ export const metadata = {
       'Cours de yoga à Grenoble et alentours : séances collectives et individuelles, ateliers ponctuels, pratique accessible à tous niveaux. Réservation par téléphone.',
     images: [
       {
-        url: '/og/mel-yoga.jpg',
+        url: '/images/opengraph/mel-yoga.jpg',
         width: 1200,
         height: 630,
       },

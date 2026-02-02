@@ -24,7 +24,7 @@ export const metadata = {
       'Cours de yoga pour adultes et enfants à Grenoble et alentours : séances accessibles, progression en douceur, en présentiel dans différentes salles. Réservation par téléphone.',
     images: [
       {
-        url: '/og/cours-yoga-grenoble.jpg',
+        url: '/images/opengraph/cours-yoga-grenoble.jpg',
         width: 1200,
         height: 630,
         alt: 'Cours de yoga à Grenoble et alentours',

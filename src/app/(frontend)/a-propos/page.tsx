@@ -22,7 +22,7 @@ export const metadata = {
       'Approche, valeurs et parcours : un yoga accessible et respectueux du corps, basé sur la respiration et la progression.',
     images: [
       {
-        url: '/og/a-propos.jpg',
+        url: '/images/opengraph/a-propos.jpg',
         width: 1200,
         height: 630,
         alt: 'À propos de la professeure de yoga',
@@ -90,6 +90,7 @@ export default async function AboutPage() {
               alt="professeur de yoga"
               fill
               priority={true}
+              fetchPriority="high"
             />
           </div>
 
