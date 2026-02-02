@@ -102,7 +102,7 @@
     overflow-y: auto;
 
     @include sm {
-        max-width: 70vw;
+        max-width: min(70vw, 1000px);
     }
     &::backdrop {
         background-color: rgba(0, 0, 0, 0.5);
