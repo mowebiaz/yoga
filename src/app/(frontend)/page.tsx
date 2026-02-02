@@ -97,7 +97,7 @@ export default async function HomePage() {
               <li>les tarifs (séance à l’unité, cartes, etc.)</li>
             </ul>
             <Link
-              href="/ateliers"
+              href="/cours"
               className="btn btn--primary"
             >
               Voir tous les cours

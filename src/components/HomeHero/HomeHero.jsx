@@ -11,12 +11,15 @@ export const HomeHero = () => {
           alt="yoga en extérieur, ambiance douce et lumineuse"
           fill
           priority={true}
-          sizes='100vw'
+          fetchPriority="high"
+          sizes="100vw"
         />
       </div>
       <div className="home-hero__content">
         <h1 className="home-hero__title">Cours de yoga à Grenoble</h1>
-        <p className='home-hero__tagline'>pour respirer, bouger, te sentir bien</p>
+        <p className="home-hero__tagline">
+          pour respirer, bouger, te sentir bien
+        </p>
         <div className="home-hero__cta">
           <Link
             className="btn btn--primary"

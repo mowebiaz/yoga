@@ -100,13 +100,14 @@
     }
 
     .footer-link {
-        //color: $accent;
         color: oklch(75% 0.077 264.28);
-        text-decoration: none;
+        text-decoration: dotted underline;
+        text-underline-offset: 3px;
         outline: none;
         padding: 5px;
         transition: all 200ms ease-in-out;
         &:hover {
+            text-decoration: underline;
             color: $secondary;
             border-radius: 5px;
         }
