@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { anyone } from '../Users/access/anyone'
 import editor from '../Users/access/editor'
 import user from '../Users/access/user'
+import { cleanupOriginalBlob } from './hooks/cleanupOriginal'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -91,29 +92,9 @@ export const Media: CollectionConfig = {
           format: 'webp',
         },
       },
-      {
-        name: 'large',
-        width: 1400,
-        formatOptions: {
-          format: 'webp',
-        },
-      },
-      {
-        name: 'xlarge',
-        width: 1920,
-        formatOptions: {
-          format: 'webp',
-        },
-      },
-      {
-        name: 'og',
-        width: 1200,
-        height: 630,
-        crop: 'center',
-        formatOptions: {
-          format: 'webp',
-        },
-      },
     ],
   },
+  hooks: {
+    afterChange: [cleanupOriginalBlob],
+  }
 }
