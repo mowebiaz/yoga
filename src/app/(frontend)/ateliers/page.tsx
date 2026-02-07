@@ -86,7 +86,7 @@ export default async function WorshopPage() {
             ancrage…) avec une pratique progressive et accessible.
           </p>
           <p>
-            Selon le thème, on pourra alterner : mouvement et postures,
+            Selon le thème, on pourra alterner : mouvements et postures,
             exercices de respiration, relaxation guidée / méditation, parfois un
             temps d’échange
           </p>

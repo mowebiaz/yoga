@@ -6,6 +6,10 @@ import type { Block } from 'payload'
 
 export const InfoMessage: Block = {
   slug: 'infoMessage',
+    labels: {
+    singular: 'Message',
+    plural: 'Messages',
+  },
   imageURL: '/images/info-message.webp',
   imageAltText: 'message d’information',
   fields: [

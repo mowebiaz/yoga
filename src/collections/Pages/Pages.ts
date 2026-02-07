@@ -52,10 +52,10 @@ export const Pages: CollectionConfig = {
     {
       name: 'layoutHome',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'message-accueil',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: ' blocs',
       },
       blocks: [InfoMessage],
       admin: {
@@ -82,8 +82,8 @@ export const Pages: CollectionConfig = {
       type: 'blocks',
       label: 'Cours enfants',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: ' blocs',
       },
       blocks: [ChildrenCourse, InfoMessage],
       admin: {
@@ -94,10 +94,10 @@ export const Pages: CollectionConfig = {
     {
       name: 'layoutWorkshops',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'Ateliers',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: ' blocs',
       },
       blocks: [Workshop, Retreat],
       admin: {
@@ -108,10 +108,10 @@ export const Pages: CollectionConfig = {
     {
       name: 'layoutAbout',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'message-a-propos',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: ' blocs',
       },
       blocks: [InfoMessage],
       admin: {
@@ -122,10 +122,10 @@ export const Pages: CollectionConfig = {
     {
       name: 'layoutContact',
       type: 'blocks',
-      label: 'Blocs de contenu',
+      label: 'message-contact',
       labels: {
-        singular: 'un Bloc',
-        plural: ' des Blocs',
+        singular: 'bloc',
+        plural: ' blocs',
       },
       blocks: [InfoMessage],
       admin: {
