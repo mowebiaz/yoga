@@ -77,7 +77,7 @@ export default async function AboutPage() {
         <div className="container about-container">
           <p>
             Je m’appelle Mélanie, et j’enseigne le yoga dans Grenoble et sa
-            region. <span className="text-accent">Mon intention</span> : vous
+            région. <span className="text-accent">Mon intention</span> : vous
             aider à vous sentir mieux dans votre corps, à respirer plus
             librement, et à retrouver un peu d’espace… même quand le quotidien
             va vite. Je propose des cours réguliers dans différents lieux, et

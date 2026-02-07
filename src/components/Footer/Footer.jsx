@@ -50,7 +50,7 @@ export const Footer = () => {
       </div>
       <div className="footer__bottom">
         <div className="footer__copyright">
-          <p>© 2026 Mel'Yoga. Tous droits réservés</p>
+          <p>&copy; {new Date().getFullYear()} - Mel'Yoga. Tous droits réservés</p>
           <p>
             Site réalisé par{' '}
             <a
