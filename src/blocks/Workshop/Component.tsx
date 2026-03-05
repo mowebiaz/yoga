@@ -45,7 +45,6 @@ export const WorkshopBlock: React.FC<Props> = ({
       <article className="workshop-card">
         {image && typeof image === 'object' && image.url ? (
           <div className="workshop-card__image">
-            image
             <Image
               src={image.url}
               alt={image.alt}
