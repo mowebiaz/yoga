@@ -12,6 +12,7 @@ import type {
 import { formatFrenchDate } from '@/utilities/formatFrenchDate'
 import './Workshop.scss'
 
+
 type Props = WorkshopBlockProps & { place: Place }
 
 export const WorkshopBlock: React.FC<Props> = ({
@@ -54,7 +55,6 @@ export const WorkshopBlock: React.FC<Props> = ({
           </div>
         ) : (
           <div className="workshop-card__image default">
-            <p aria-hidden="true">Pas d&apos;image</p>
             <Image
               src={'/images/default-image.webp'}
               alt=""
