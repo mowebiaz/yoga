@@ -2,7 +2,6 @@ import type { CollectionConfig } from 'payload'
 import { anyone } from '../Users/access/anyone'
 import editor from '../Users/access/editor'
 import user from '../Users/access/user'
-import { cleanupOriginalBlob } from './hooks/cleanupOriginal'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -94,7 +93,4 @@ export const Media: CollectionConfig = {
       },
     ],
   },
-  hooks: {
-    afterChange: [cleanupOriginalBlob],
-  }
 }
