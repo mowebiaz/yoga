@@ -88,7 +88,9 @@ export default async function AboutPage() {
             <Image
               src={'/images/about-me.webp'}
               alt="professeur de yoga"
-              fill
+              width={500}
+              height={500}
+              sizes="(min-width: 992px) 300px, 60vw"
               priority={true}
               fetchPriority="high"
             />
