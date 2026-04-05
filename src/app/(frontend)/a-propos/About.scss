@@ -7,14 +7,19 @@
 
         .image-container {
             align-self: center;
-            position: relative;
-            height: 45vh;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            overflow: hidden;
+            width: 75vw;
+            max-width: 500px;
             margin: 0.5rem 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+            @include sm {
+                width: 60vw;
+            }
+
             img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
                 object-fit: contain;
             }
         }

@@ -2,7 +2,15 @@ import type { CollectionConfig } from 'payload'
 import { anyone } from '../Users/access/anyone'
 import editor from '../Users/access/editor'
 import user from '../Users/access/user'
-import { cleanupOriginalBlob } from './hooks/cleanupOriginal'
+
+type MediaForThumb = {
+  url?: string | null
+  sizes?: {
+    thumbnail?: {
+      filename?: string | null
+    }
+  }
+}
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -61,7 +69,15 @@ export const Media: CollectionConfig = {
     },
     mimeTypes: ['image/*'],
 
-    adminThumbnail: 'thumbnail',
+        adminThumbnail: ({ doc }) => {
+      const media = doc as MediaForThumb
+      const thumbFilename = media?.sizes?.thumbnail?.filename
+      if (thumbFilename) {
+        return `${process.env.BLOB_PUBLIC_URL}/${thumbFilename}`
+      }
+
+      return media?.url ?? null
+    },
     imageSizes: [
       {
         name: 'thumbnail',
@@ -94,7 +110,4 @@ export const Media: CollectionConfig = {
       },
     ],
   },
-  hooks: {
-    afterChange: [cleanupOriginalBlob],
-  }
 }

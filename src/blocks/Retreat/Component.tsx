@@ -41,7 +41,6 @@ export const RetreatBlock: React.FC<Props> = ({
       <article className="workshop-card">
         {image && typeof image === 'object' && image.url ? (
           <div className="workshop-card__image">
-            image
             <Image
               src={image.url}
               alt={image.alt}
@@ -51,10 +50,9 @@ export const RetreatBlock: React.FC<Props> = ({
           </div>
         ) : (
           <div className="workshop-card__image default">
-            <p>Pas d&apos;image</p>
             <Image
               src={'/images/default-image.webp'}
-              alt={"pas d'image"}
+              alt=""
               fill
               sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 25vw"
             />

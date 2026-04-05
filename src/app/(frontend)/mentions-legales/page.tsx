@@ -86,7 +86,6 @@ export default function LegalMentionsPage() {
       <ul>
         <li>Unsplash</li>
         <li>Freepik</li>
-        <li>Unsplash</li>
         
       </ul>
 
